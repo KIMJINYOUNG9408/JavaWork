@@ -4,41 +4,19 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-
-		String a = "11+15+33+22";
-		String b;
-		String c;
-		int tmp = 0;
-		int tmp2 = 0;
-		int num1, num2, result = 0;
-
-		while (true) {
-			
-			for (int i = 0; i < a.length(); i++) {
-				if (a.charAt(i) == '+') {
-					tmp2 = i;
-					b = a.substring(0, i);
-					for (int j = i + 1; j < a.length(); j++) {
-
-						if (a.charAt(j) == '+') {
-							tmp = j + 1;
-							c = a.substring(i + 1, tmp - 1);
-							num2 = Integer.parseInt(c);
-							num1 = Integer.parseInt(b);
-							result = num1 + num2;
-							a= result + a.substring(tmp);
-							System.out.println(result);
-							
-
-						} else {
-							c = a.substring(i + 1);
-
-						}
-					}
-				}
-			}
-
+         
+		
+		for(int i=1; i<=9; i++) {
+			System.out.print("**" + i + "단 ** \t\t");
 		}
 		
+		
+		for(int i=2; i<=9; i++) {
+			System.out.println();
+			for(int j=1; j<=9; j++) {
+				System.out.print(j + " X " + i + " = " + ( j*i) +"\t");
+			}
+		}
+		 
 	}
 }
