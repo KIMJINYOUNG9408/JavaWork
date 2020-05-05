@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+p {
+	font-size: 200%;
+}
+
+p#demo { 
+	background-color: cyan;
+}
+
+p.c1 { 
+	color: red;
+}
+
+p.c2 {
+	background-color: yellow;
+}
+
+</style>
+</head>
+<body>
+
+<p id="demo">id = demo</p>
+<p class="c1">class="c1"</p>
+<p class="c2">class="c2"</p>
+<p class="c1 c2">class="c1 c2"</p>
+
+<p id="demo">id = demo 또?</p> <!-- id는 css는 일단 동작하나 자바스크립트에서 유니크해야함. -->
+
+비밀번호: <input type="text" name="userid" size="25">
+<input type="button">
+비밀번호: <input type="text" name="userpw" size="20">
+
+비밀번호: <input type="text" name="userpw" size="5">
+</body>
+</html>
