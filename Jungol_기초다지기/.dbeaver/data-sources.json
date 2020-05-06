@@ -1,7 +1,7 @@
 {
 	"folders": {},
 	"connections": {
-		"oracle_thin-1714e254556-5574b6f208e77174": {
+		"oracle_thin-171e79cdbca-3669167bccfbdc39": {
 			"provider": "oracle",
 			"driver": "oracle_thin",
 			"name": "Oracle - XE",
@@ -16,19 +16,20 @@
 				"home": "C:\\oraclexe\\app\\oracle\\product\\11.2.0\\server",
 				"type": "dev",
 				"provider-properties": {
+					"@dbeaver-connection-type@": "BASIC",
 					"@dbeaver-check-schema-content@": "false",
 					"@dbeaver-always-show-dba@": "false",
 					"@dbeaver-always-use-dba-views@": "false",
 					"@dbeaver-meta-use-sys-schema@": "false",
 					"@dbeaver-meta-use-simple-constraints@": "false",
 					"@dbeaver-use-rule-hint@": "false",
-					"@dbeaver-use-meta-optimizer@": "false",
-					"@dbeaver-connection-type@": "BASIC"
+					"@dbeaver-use-meta-optimizer@": "false"
 				},
-				"auth-model": "oracle_native"
+				"auth-model": "oracle_native",
+				"handlers": {}
 			}
 		},
-		"oracle_thin-171e7aa4472-25fdec06c57eadc": {
+		"oracle_thin-171e79d82a3-287ddd75c4971289": {
 			"provider": "oracle",
 			"driver": "oracle_thin",
 			"name": "Oracle - XE 2",
