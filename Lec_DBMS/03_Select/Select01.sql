@@ -56,3 +56,5 @@ FROM T_PROFESSOR;
 SELECT *FROM T_STUDENT;
 SELECT name || '의 키는' || HEIGHT || 'cm, 몸무게는' || WEIGHT || 'kg 입니다' "학생의 키와 몸무게"
 FROM T_STUDENT; 
+
+SELECT BONUS FROM T_PROFESSOR ;
