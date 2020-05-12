@@ -13,6 +13,8 @@ th,td {
 }
 </style>
 </head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
 <!--
 ■서울시 지하철 역사 정보
 http://data.seoul.go.kr/dataList/datasetView.do?infId=OA-12753&srvType=A&serviceKind=1&currentPageNo=1
@@ -33,8 +35,8 @@ http://swopenAPI.seoul.go.kr/api/subway/키값넣으세요/json/stationInfo/0/5/
 <form>
 역명: <input type="text" id="stationname" value="서울"/><br><br>
 
-<button type="button" onclick="loadData()">역사정보 가져오기</button>
-<button type="button" onclick="removeTable()">지우기</button>
+<button id="btn_load" type="button">역사정보 가져오기</button>
+<button id="btn_remove" type="button">지우기</button>
 </form>
 <br><br>
 <h2>AJAX + XML</h2>
@@ -47,58 +49,58 @@ http://swopenAPI.seoul.go.kr/api/subway/키값넣으세요/json/stationInfo/0/5/
 <script>
 var api_key = "54416e74676b616c373055434c526e";
 
-function removeTable(){
-	document.getElementById('demoXML').removeChild(document.getElementById('demoXML').childNodes[0]);
-	document.getElementById('demoJSON').removeChild(document.getElementById('demoJSON').childNodes[0]);
-}
 
-function loadData() {
+	 
+	$(document).ready(function(){
+	 $("#btn_load").click(function(){
+		 var stationname = document.getElementById("stationname").value.trim();
+		 
+		 // XML
+		 var url = "http://swopenAPI.seoul.go.kr/api/subway/" + api_key + "/xml/stationInfo/0/5/" +stationname;
+		
+		$.ajax({
+			url : url,
+			type : "GET",
+			cache : false,
+			success : function(data, status){
+				if(status == "success") parseXML(data);
+			}
+		});
+		 
+		// JSON
+		url = "http://swopenAPI.seoul.go.kr/api/subway/" + api_key + "/json/stationInfo/0/5/" +stationname
+		 
+		$.ajax({
+			url : url, 
+			type : "GET",
+			cache : false,
+			success : function(data, status){
+				if(status == "success") parseJSON(data);
+			}
+		});
+		
+	 });
+	 
+	 $("#btn_remove").click(function(){
+		$("#demoXML").html("");
+		$("#demoJSON").html("");
+	 });
+ });
 
-	var stationname = document.getElementById('stationname').value.trim(); 
-	// XML
-	var url = "http://swopenAPI.seoul.go.kr/api/subway/" + api_key + "/xml/stationInfo/0/5/" + stationname;
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function(){
-		if(this.readyState == 4 && this.status == 200){
-			parseXML(this.responseXML);
-		}
-	};
-	xhttp.open("GET", url, true);
-	xhttp.send();
-
-	// JSON
-	var url = "http://swopenAPI.seoul.go.kr/api/subway/" + api_key + "/json/stationInfo/0/5/" +stationname
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function(){
-		if(this.readyState == 4 && this.status == 200){
-			var jsonText = JSON.parse(this.responseText);
-			parseJSON(jsonText);
-		}
-	};
-	xhttp.open("GET", url, true);
-	xhttp.send();
-
-
-
-}
-
-function parseXML(xmlDOM) {
-
-	
+ function parseXML(xmlDOM) {
 	var table = "<tr><th>역명</th><th>아이디</th><th>호선</th><th>영문명</th></tr>";
-
-	var row = xmlDOM.getElementsByTagName("row");
-	for(i = 0; i < row.length; i++){
+	$(xmlDOM).find("row").each(function(){
 		table += "<tr>";
-		table += "<td>" + row[i].getElementsByTagName("statnNm")[0].childNodes[0].nodeValue + "</td>";
-		table += "<td>" + row[i].getElementsByTagName("subwayId")[0].childNodes[0].nodeValue + "</td>";
-		table += "<td>" + row[i].getElementsByTagName("subwayNm")[0].childNodes[0].nodeValue + "</td>";
-		table += "<td>" + row[i].getElementsByTagName("statnNmEng")[0].childNodes[0].nodeValue + "</td>";
+		table += "<td>" + $(this).find("statnNm").text() + "</td>";
+		table += "<td>" + $(this).find("subwayId").text() + "</td>";
+		table += "<td>" + $(this).find("subwayNm").text() + "</td>";
+		table += "<td>" + $(this).find("statnNmEng").text() + "</td>";		
 		table += "</tr>";
-	}
-
-	document.getElementById('demoXML').innerHTML = table;
+	});
+	$("#demoXML").html(table);
 }
+
+
 	
 	
 
