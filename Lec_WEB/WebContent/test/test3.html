@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <div>실검</div>
+	<div id="ranking"></div>
+</body>
+
+<script>
+ $(document).ready(function(){
+		 
+         // JSON
+         url = "test.json"
+         $.ajax({
+             url : url, 
+             type : "GET",
+             cache : false,
+             success : function(data, status){
+                 if(status == "success") parseJSON(data);
+             }
+         });		
+      
+  });
+
+  function parseJSON(jsonObj) {
+	var row = jsonObj.a.row;
+	
+	var word = new Array();
+
+	
+		for(i=0; i < row.length; i++){
+            word[i] =   (i+1) + "위 : " +  row[i].name
+        }
+				
+     var i = 0;
+   
+    var interval = setInterval(function(){	
+			if(i>20){		//i가 3이상이되면 반복이 종료되므로 
+				i=0;		//다시 i를 0으로 초기화
+			}
+            $("#ranking").html(word[i])
+		  	i++;	  
+		  }, 1500);			//2초마다 갱신
+		  
+    
+}
+ 
+
+	
+	
+  
+</script>
+</html>
