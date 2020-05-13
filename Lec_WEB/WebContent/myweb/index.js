@@ -1,10 +1,12 @@
-function headsee(){
-    document.getElementById('logo_hide').style.display = 'block';    
-}
-
-function headhind(){
-    document.getElementById('logo_hide').style.display = 'none';    
-}
+// header에 마우스커서가면 숨김말 생겼다 사라졌다하기.
+$(document).ready(function(){
+	$("#z").hover(function(){
+		$("#logo_hide").css("display", "block");
+    },
+    function(){
+		$("#logo_hide").css("display", "none");
+    });
+});
 
 
 // 클릭했을때 1번~10번까지 확대시키고 변경시키려는 펑 ~~~ 션
@@ -30,5 +32,4 @@ function rankhind(i){
     document.getElementById(name3).innerHTML = "heart";
        
 }
-
 

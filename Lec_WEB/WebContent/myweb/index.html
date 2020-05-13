@@ -6,16 +6,19 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Kirang+Haerang&display=swap&subset=korean" rel="stylesheet">
     <link href="index.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="index.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
 </head>
 
 <body>
-    <div id="wrap">
-    <header id="d" onmouseover="headsee()" onmouseout="headhind()">
+    <div id="wrap" class="col-m-12">
+    <header id="z" class="col-m-12">
         <div id="top_menu_login"> <a href="#">login</a> | <a href="#">Join	</a></div>
         <div id="top_menu_down"> <a href="#">M플레이어 다운</a> |  <a href="#">M플레이어 실행</a> </div>
         <div id="top_menu_service"> <a href="#">이용권구매</a> | <a href="#">캐시충전</a>
-            | <a href="#">뮤직티켓</a>   | <a href="#">VIP실</a>  | <a href="#">이벤트</a>
+            | <a href="#">뮤직티켓</a>   | <a href="">VIP실</a>  | <a href="#">이벤트</a>
                 
         </div>
         <div class="clear"></div>
@@ -35,7 +38,7 @@
         </div>
         </header>
         <div class="clear"></div>
-        <nav id="menu">
+        <nav class="col-m-12" id="menu">
             <ul>
                 <li><a href="#">음원차트</a></li>
                 <li><a href="#">최신앨범</a></li>
@@ -51,15 +54,26 @@
 
     <div class="clear"></div>
 
-    <section0>
+    <section id="search_login" class="col-m-12">
         <div>
-            만들어야댐 검색창 + 로그인창 ? ????  ==> 빨간테두리 지우기 스타일 다 css로옮기고 클릭했을때 효과추가 순위에 재생버튼 / 유튜브버튼 만들기 뮤비 밑에 하나 더 만들고 footer까지만들기
+            <a href="#w">
+                <img src="image/music2.PNG" width="120px" height="120px" style=" padding-top: 10px; margin-bottom: 0; padding-bottom: 0px; float: left;">
+                </a>
+                <input type="text" id="mainheader2" placeholder="내가 듣고싶은 노래나 알고싶은 가수를 입력하세요." >
+                <a href="" id="search"> <i class="fas fa-search"></i></a>
+                <span>실시간검색어</span>
+                
+                <span style="border: 1px solid gray; margin: 4px; padding: 8px 10px 10px 10px;" >1. 아이유</span>
+                 
+
+                <button style="border-radius: 20%; height: 80px; width: 200px; font-size : 20px; margin-right: 25px; margin-top: 30px; float: right;" >로그인</button>
+                
         </div>
 
-
-    </section0>
+</section>
+    
     <div class="clear"></div>
-    <section>
+    <section id="album_list" class="col-m-12">
         <div>
             <div id="new_album_list"> <a href="#">전체</a> | <a href="#">가요	</a>
                 | <a href="#">발라드	</a> | <a href="#">댄스	</a>
@@ -106,7 +120,7 @@
         
       </div>
     </section>
-    <section2>
+    <section id="song_list" class="col-m-12">
           <div>
               실시간 순위
              <table style="border-collapse: collapse; font-size:15px">
@@ -225,7 +239,7 @@
              
           </div>  
 
-    </section2>
+    </section>
       
     <div class="clear"></div>
     <hr style="margin: 0; padding: 0">

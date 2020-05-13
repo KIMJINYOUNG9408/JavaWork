@@ -11,6 +11,27 @@ table,th,td {
 th,td {
   padding: 5px;
 }
+
+talbe {
+	width:300px
+}
+
+#a{
+width: 15%;
+}
+
+#b{
+width: 20%;
+}
+
+#d{
+width: 15%;
+}
+
+#d{
+width: 50%;
+}
+
 </style>
 </head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -28,68 +49,12 @@ th,td {
 <hr>
 <h2>AJAX + JSON</h2>
 <table id="demoJSON"></table>
+
 <script>
-/*
-$.ajax() 함수
-  jQuery 내의 모든 AJAX 관련 함수는 내부적으로 $.ajax()를 호출한다
-  load(), get(), post() 등을 사용하지 못하는 경우는 $.ajax() 를 사용하면 된다.
-
-[참조]
-http://api.jquery.com/jquery.ajax/
-https://www.w3schools.com/jquery/ajax_ajax.asp
-
-
-[구문]
-$.ajax({name:value, name:value, ... })
-
-위 name:value 에 전달되어질 주요 name 들은 다음과 같다
-
-url ★: request 보낼 url
-
-type ★ : "GET" 혹은 "POST"
-
-data : request 에 전송할 데이터, object 타입, POST 방식인 경우 여기에 넘겨야 한다
-	ex) data : {"id" : "scott", "pw" : "tiger"}
-
-cache : 이전의 동일 url 로 request 한결과를 cache 할지 여부 (디폴트값은 true!)
-
-async : 비동기 여부 (디폴트값은 true)
-
-contentType : 서버에 데이터 전송시 사용할 content type
-		디폴트는 "application/x-www-form-urlencoded"
-
-success(result,status,xhr) ★ : 
-	request 성공한 경우 수행하는 함수
-	- result - response 받은 데이터, 
-	           JSON 인 경우 이미 파싱 완료되어 JSON object 상태!
-	           XML 인 경우 이미 파싱 완료되어 DOM object 상태!
-	- status - response status 값
-	- xhr - XMLHttpRequest
-
-error(xhr,status,error) :
-	request 실패한 경우 수행하는 함수
-
-beforeSend(xhr) :
-	request 직전에 수행하는 함수
-
-complete(xhr,status) :
-	request 처리 종료후 수행하는 함수, success / error 함수 끝난후.
-	
-dataFilter(data,type) :
-	response 갓 받은 데이터 (raw data)를 처리할때 수행하는 함수
-	
-*/
 
 
  
  $(document).ready(function(){
-	 $("#btn_load").click(function(){
-	
-		 
-		
-		
-		
-
 		 
 		// JSON
 		url = "test.json"
@@ -100,30 +65,30 @@ dataFilter(data,type) :
 			success : function(data, status){
 				if(status == "success") parseJSON(data);
 			}
-		});
-		
-	 });
+		});		
 	 
-	 $("#btn_remove").click(function(){		
-		$("#demoJSON").html("");
-	 });
  });
  
 
 
 function parseJSON(jsonObj) {
 	var row = jsonObj.a.row;
-	var i;
+	
+	var word = new Array();
 
 	var table = "<tr><th>호선</th><th>역명</th><th>승차인원</th><th>하차인원</th></tr>";
 	for (i = 0; i < row.length; i++) {
+		 
+		word[i] = row[i].one + row[i].two
 		table += "<tr>"; 
-		table += "<td>" + row[i].one + "</td>";
-		table += "<td>" + row[i].two + "</td>";
-		table += "<td>" + row[i].three + "</td>";
-		table += "<td>" + row[i].four + "</td>";
+		table += "<td id='a'>" +"야"+ row[i].one +"야"+ "</td>";
+		table += "<td id='b'>" + row[i].two + "</td>";
+		table += "<td id='c'>" + row[i].three + "</td>";
+		table += "<td id='d'>" + word[i] + "</td>";
 		table += "</tr>"; 
 	}
+
+	
 	$("#demoJSON").html(table);
 }
 </script>
