@@ -28,7 +28,7 @@
   });
 
   function parseJSON(jsonObj) {
-	var row = jsonObj.a.row;
+	var row = jsonObj.search_rank.row;
 	
 	var word = new Array();
 
@@ -40,12 +40,12 @@
      var i = 0;
    
     var interval = setInterval(function(){	
-			if(i>20){		//i가 3이상이되면 반복이 종료되므로 
-				i=0;		//다시 i를 0으로 초기화
+			if(i>20){		
+				i=0;		
 			}
             $("#ranking").html(word[i])
 		  	i++;	  
-		  }, 1500);			//2초마다 갱신
+		  }, 1500);			//1.5초마다 갱신
 		  
     
 }

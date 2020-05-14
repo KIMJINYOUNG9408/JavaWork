@@ -36,8 +36,10 @@
 
             </div> 
         </div>
-        </header>
+        </header> <!-- header 종료.-->
         <div class="clear"></div>
+
+
         <nav class="col-m-12" id="menu">
             <ul>
                 <li><a href="#">음원차트</a></li>
@@ -48,27 +50,27 @@
                 <li><a href="#">오늘의추천</a></li>                       
                 <li><a href="#">마이뮤직</a></li>
             </ul>  
-        </nav>
+        </nav> <!-- nav 종료 -->
+        <div class="clear"></div>
 
-    
-
-    <div class="clear"></div>
 
     <section id="search_login" class="col-m-12">
         <div>
             <a href="#w">
-                <img src="image/music2.PNG" width="120px" height="120px" style=" padding-top: 10px; margin-bottom: 0; padding-bottom: 0px; float: left;">
-                </a>
-                <input type="text" id="mainheader2" placeholder="내가 듣고싶은 노래나 알고싶은 가수를 입력하세요." >
-                <a href="" id="search"> <i class="fas fa-search"></i></a>
-                <span>실시간검색어</span>
+                <img id="search_login_img" src="image/music2.PNG" width="120px" height="120px">
+            </a>
+            <input type="text" id="search_bar" placeholder="내가 듣고싶은 노래나 알고싶은 가수를 입력하세요.">
+               
+                <span id="search_name">실시간검색어</span>
                 
-                <span style="border: 1px solid gray; margin: 4px; padding: 8px 10px 10px 10px;" >1. 아이유</span>
+                <span id="ranking"></span>
                  
 
-                <button style="border-radius: 20%; height: 80px; width: 200px; font-size : 20px; margin-right: 25px; margin-top: 30px; float: right;" >로그인</button>
+                <button id="login">로그인</button>
                 
-        </div>
+        </div> 
+
+        <!-- section1 종료 -->
 
 </section>
     
@@ -84,25 +86,25 @@
             
 
         <div id="new_album">
-            <table style="margin-top: 15px; padding-top: 15px;">
+            <table>
                 <tr>
-                    <td><img src="https://cdnimg.melon.co.kr/cm/album/images/100/08/861/10008861_500.jpg/melon/resize/260/quality/80/optimize" alt="">
-                    트와이스</td>
-                     <td><img src="https://cdnimg.melon.co.kr/cm2/album/images/103/46/650/10346650_500.jpg?14a08050b8c6adc879b6e0cf587d456a/melon/resize/260/quality/80/optimize" alt="">
-                    아이유</td>
-                     <td> <img src="https://cdnimg.melon.co.kr/cm/album/images/027/07/131/2707131_500.jpg?d12844bf96d3e276ece24c1a2a50fd68/melon/resize/260/quality/80/optimize" alt="">
-                    볼빨간사춘기</td>
+                    
+                    <td><img class="new_album_detail" src="https://cdnimg.melon.co.kr/cm/album/images/100/08/861/10008861_500.jpg/melon/resize/260/quality/80/optimize" alt="">
+                   <div class="middle">officially<br>d</div>트와이스</td>
+                     <td><img class="new_album_detail" src="https://cdnimg.melon.co.kr/cm2/album/images/103/46/650/10346650_500.jpg?14a08050b8c6adc879b6e0cf587d456a/melon/resize/260/quality/80/optimize" alt="">
+                        <div class="middle">officially<br>d</div>  아이유</td>
+                     <td> <img class="new_album_detail" src="https://cdnimg.melon.co.kr/cm/album/images/027/07/131/2707131_500.jpg?d12844bf96d3e276ece24c1a2a50fd68/melon/resize/260/quality/80/optimize" alt="">
+                        <div class="middle">officially<br>d</div>    볼빨간사춘기</td>
                 </tr>
                
                 <tr>
-                    <td><img src="https://cdnimg.melon.co.kr/cm2/album/images/103/31/167/10331167_500.jpg?15e9ddacaa8b660b4334022e4de95cd5/melon/resize/260/quality/80/optimize" alt="">
-                        트와이스</td>
-                
-                    <td><img src="https://cdnimg.melon.co.kr/cm/album/images/102/21/424/10221424_500.jpg?819590affb9db304d8352848dfcad7e0/melon/resize/260/sharpen/0x1" alt="">
-                    제니</td>
+                    <td><img class="new_album_detail" src="https://cdnimg.melon.co.kr/cm2/album/images/103/31/167/10331167_500.jpg?15e9ddacaa8b660b4334022e4de95cd5/melon/resize/260/quality/80/optimize" alt="">
+                        <div class="middle">officially<br>d</div>트와이스</td>
+                    <td><img class="new_album_detail" src="https://cdnimg.melon.co.kr/cm/album/images/102/21/424/10221424_500.jpg?819590affb9db304d8352848dfcad7e0/melon/resize/260/sharpen/0x1" alt="">
+                        <div class="middle">officially<br>d</div>제니</td>
                     
-                     <td> <img src="https://cdnimg.melon.co.kr/cm2/album/images/103/81/712/10381712_20200131110358_500.jpg/melon/resize/260/quality/80/optimize" alt="">
-                    가호</td>
+                     <td> <img class="new_album_detail" src="https://cdnimg.melon.co.kr/cm2/album/images/103/81/712/10381712_20200131110358_500.jpg/melon/resize/260/quality/80/optimize" alt="">
+                        <div class="middle">officially<br>d</div>가호</td>
                     
                 </tr>    
 
@@ -110,7 +112,7 @@
 
              
             </table>
-              <div style="text-align: center; background-color: rgba(169, 169, 169, 0.295); "> 새로운 앨범을 지금 바로 만나보세요<br> 당신을 기다리고 있습니다. </div>
+              <div id="new_album_msg"> 새로운 앨범을 지금 바로 만나보세요<br> 당신을 기다리고 있습니다. </div>
 
         
        
@@ -123,7 +125,7 @@
     <section id="song_list" class="col-m-12">
           <div>
               실시간 순위
-             <table style="border-collapse: collapse; font-size:15px">
+             <table>
                 <tr style="height: 50px;">
                     <td style="width: 10%; height: 50px">
                        앨범
@@ -134,107 +136,100 @@
                     <td style="width: 20%">Play&View</td>
                 </tr>
 
-                <tr id="rank1" style="height: 50px;" onmouseover="ranksee(1)" onmouseout="rankhind(1)">
-                    <td id="rank1_img" style="height: 50px">
-                       <img src="https://cdnimg.melon.co.kr/cm2/album/images/103/31/167/10331167_500.jpg?15e9ddacaa8b660b4334022e4de95cd5/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
-                   </td>                   
-                    <td>1</td>
-                    <td>Twice</td>
-                    <td>Feel Special</td>
-                    <td id="rank1_p">Heart Shaker</td>
-                </tr>
-
-   
-
-                <tr id="rank2" style="height: 50px;" onmouseover="ranksee(2)" onmouseout="rankhind(2)">
-                    <td id="rank2_img" style="width: 10%; height: 50px">
+                <tr id="rank1" onmouseover="ranksee(1)" onmouseout="rankhind(1)">
+                    <td id="rank1_img" style="width: 10%; height: 50px">
                        <img src="https://cdnimg.melon.co.kr/cm/album/images/026/81/333/2681333_500.jpg?8d0315831d6901fafe8fc197f611cc58/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
                    </td>                   
-                    <td style="width: 5%;">2</td>
-                    <td style="width: 20%;">Twice</td>
-                    <td style="width: 40%">CheerUp</td>
-                    <td id="rank2_p" style="width: 25%">Heart Shaker</td>
+                    <td>2</td>
+                    <td>Twice</td>
+                    <td>CheerUp</td>
+                    <td id="rank2_p">HeartShaker</td>
                 </tr>
+   
 
-                <tr id="rank3" style="height: 50px;" onmouseover="ranksee(3)" onmouseout="rankhind(3)">
-                    <td id="rank3_img" style="width: 10%; height: 50px">
-                       <img src="https://cdnimg.melon.co.kr/cm/album/images/027/07/131/2707131_500.jpg?d12844bf96d3e276ece24c1a2a50fd68/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
+                <tr>
+                    <td id="rank1_img" style="width: 10%; height: 50px">
+                       <img src="https://cdnimg.melon.co.kr/cm/album/images/026/81/333/2681333_500.jpg?8d0315831d6901fafe8fc197f611cc58/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
                    </td>                   
-                    <td style="width: 5%;">3</td>
-                    <td style="width: 20%;">볼빨간사춘기</td>
-                    <td style="width: 40%">싸운날</td>
-                    <td id="rank3_p" style="width: 25%">Heart Shaker</td>
+                    <td>2</td>
+                    <td>Twice</td>
+                    <td>CheerUp</td>
+                    <td id="rank2_p">HeartShaker</td>
                 </tr>
 
-                <tr style="height: 50px;">
-                    <td style="width: 10%; height: 50px">
-                       <img src="https://cdnimg.melon.co.kr/cm2/album/images/103/46/650/10346650_500.jpg?14a08050b8c6adc879b6e0cf587d456a/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
+                <tr>
+                    <td id="rank1_img" style="width: 10%; height: 50px">
+                       <img src="https://cdnimg.melon.co.kr/cm/album/images/026/81/333/2681333_500.jpg?8d0315831d6901fafe8fc197f611cc58/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
                    </td>                   
-                    <td style="width: 5%;">4</td>
-                    <td style="width: 20%;">아이유</td>
-                    <td style="width: 40%">Blueming</td>
-                    <td style="width: 25%">Heart Shaker</td>
+                    <td>2</td>
+                    <td>Twice</td>
+                    <td>CheerUp</td>
+                    <td id="rank2_p">HeartShaker</td>
                 </tr>
-
-                <tr style="height: 50px;">
-                    <td style="width: 10%; height: 50px">
-                       <img src="https://cdnimg.melon.co.kr/cm2/album/images/103/31/167/10331167_500.jpg?15e9ddacaa8b660b4334022e4de95cd5/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
+                <tr>
+                    <td id="rank1_img" style="width: 10%; height: 50px">
+                       <img src="https://cdnimg.melon.co.kr/cm/album/images/026/81/333/2681333_500.jpg?8d0315831d6901fafe8fc197f611cc58/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
                    </td>                   
-                    <td style="width: 5%;">1</td>
-                    <td style="width: 20%;">트와이스</td>
-                    <td style="width: 40%">Heart Shaker</td>
-                    <td style="width: 25%">Heart Shaker</td>
+                    <td>2</td>
+                    <td>Twice</td>
+                    <td>CheerUp</td>
+                    <td id="rank2_p">HeartShaker</td>
                 </tr>
-
-                <tr style="height: 50px;">
-                    <td style="width: 10%; height: 50px">
-                       <img src="https://cdnimg.melon.co.kr/cm/album/images/100/08/861/10008861_500.jpg/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
+                <tr>
+                    <td id="rank1_img" style="width: 10%; height: 50px">
+                       <img src="https://cdnimg.melon.co.kr/cm/album/images/026/81/333/2681333_500.jpg?8d0315831d6901fafe8fc197f611cc58/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
                    </td>                   
-                    <td style="width: 5%;">6</td>
-                    <td style="width: 20%;">Twice</td>
-                    <td style="width: 40%">TT</td>
-                    <td style="width: 25%">Heart Shaker</td>
+                    <td>2</td>
+                    <td>Twice</td>
+                    <td>CheerUp</td>
+                    <td id="rank2_p">HeartShaker</td>
                 </tr>
-                 <tr style="height: 50px;">
-                     <td style="width: 10%; height: 50px">
-                        <img src="https://cdnimg.melon.co.kr/cm2/album/images/103/31/167/10331167_500.jpg?15e9ddacaa8b660b4334022e4de95cd5/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
-                    </td>                   
-                     <td style="width: 5%;">1</td>
-                     <td style="width: 20%;">트와이스</td>
-                     <td style="width: 40%">Heart Shaker</td>
-                     <td style="width: 25%">Heart Shaker</td>
-                 </tr>
-
-                 <tr style="height: 50px;">
-                    <td style="width: 10%; height: 50px">
-                       <img src="https://cdnimg.melon.co.kr/cm2/album/images/103/31/167/10331167_500.jpg?15e9ddacaa8b660b4334022e4de95cd5/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
+                <tr>
+                    <td id="rank1_img" style="width: 10%; height: 50px">
+                       <img src="https://cdnimg.melon.co.kr/cm/album/images/026/81/333/2681333_500.jpg?8d0315831d6901fafe8fc197f611cc58/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
                    </td>                   
-                    <td style="width: 5%;">1</td>
-                    <td style="width: 20%;">트와이스</td>
-                    <td style="width: 40%">Heart Shaker</td>
-                    <td style="width: 25%">Heart Shaker</td>
+                    <td>2</td>
+                    <td>Twice</td>
+                    <td>CheerUp</td>
+                    <td id="rank2_p">HeartShaker</td>
                 </tr>
-
-                <tr style="height: 50px;">
-                    <td style="width: 10%; height: 50px">
-                       <img src="https://cdnimg.melon.co.kr/cm2/album/images/103/31/167/10331167_500.jpg?15e9ddacaa8b660b4334022e4de95cd5/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
+                <tr>
+                    <td id="rank1_img" style="width: 10%; height: 50px">
+                       <img src="https://cdnimg.melon.co.kr/cm/album/images/026/81/333/2681333_500.jpg?8d0315831d6901fafe8fc197f611cc58/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
                    </td>                   
-                    <td style="width: 5%;">1</td>
-                    <td style="width: 20%;">트와이스</td>
-                    <td style="width: 40%">Heart Shaker</td>
-                    <td style="width: 25%">Heart Shaker</td>
+                    <td>2</td>
+                    <td>Twice</td>
+                    <td>CheerUp</td>
+                    <td id="rank2_p">HeartShaker</td>
                 </tr>
-
-                <tr style="height: 50px;">
-                    <td style="width: 10%; height: 50px">
-                       <img src="https://cdnimg.melon.co.kr/cm2/album/images/103/31/167/10331167_500.jpg?15e9ddacaa8b660b4334022e4de95cd5/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
+                <tr>
+                    <td id="rank1_img" style="width: 10%; height: 50px">
+                       <img src="https://cdnimg.melon.co.kr/cm/album/images/026/81/333/2681333_500.jpg?8d0315831d6901fafe8fc197f611cc58/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
                    </td>                   
-                    <td style="width: 5%;">1</td>
-                    <td style="width: 20%;">트와이스</td>
-                    <td style="width: 40%">Heart Shaker</td>
-                    <td style="width: 25%">Heart Shaker</td>
+                    <td>2</td>
+                    <td>Twice</td>
+                    <td>CheerUp</td>
+                    <td id="rank2_p">HeartShaker</td>
                 </tr>
-
+                <tr>
+                    <td id="rank1_img" style="width: 10%; height: 50px">
+                       <img src="https://cdnimg.melon.co.kr/cm/album/images/026/81/333/2681333_500.jpg?8d0315831d6901fafe8fc197f611cc58/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
+                   </td>                   
+                    <td>2</td>
+                    <td>Twice</td>
+                    <td>CheerUp</td>
+                    <td id="rank2_p">HeartShaker</td>
+                </tr>
+                <tr>
+                    <td id="rank1_img" style="width: 10%; height: 50px">
+                       <img src="https://cdnimg.melon.co.kr/cm/album/images/026/81/333/2681333_500.jpg?8d0315831d6901fafe8fc197f611cc58/melon/resize/260/quality/80/optimize" width="100%" height="100%" alt="" style="float: left; padding: 0px; margin: 0px;">
+                   </td>                   
+                    <td>2</td>
+                    <td>Twice</td>
+                    <td>CheerUp</td>
+                    <td id="rank2_p">HeartShaker</td>
+                </tr>
+             
              </table>
              
           </div>  

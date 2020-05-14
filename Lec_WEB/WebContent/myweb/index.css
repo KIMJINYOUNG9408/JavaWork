@@ -6,6 +6,7 @@
 	margin-bottom: 2px;
 	padding-bottom: 10px;
 	color: white;
+	font-family: Verdana, Geneva, sans-serif;
 }
 
 
@@ -21,13 +22,11 @@
 
 
 
-header{
+header {
     background: black;    
     width: 100%;
     height:  auto;   
-    text-align: center;   
-
-    
+    text-align: center;      
    
 }
 nav#menu {
@@ -184,7 +183,19 @@ section {
 	float : left;
 }
 
-#mainheader2 {
+#search_login_img{
+	padding-top: 10px; margin-bottom: 0; padding-bottom: 0px; float: left;
+}
+
+
+#ranking {
+	border: 1px solid gray; margin: 4px; padding: 8px 10px 10px 10px; font-size: 14px; 
+	
+}
+
+
+
+#search_bar {
 	
 	width: 350px;
 	
@@ -200,6 +211,22 @@ section {
 	
 }
 
+
+#login {
+	border-radius: 20%; height: 80px; width: 200px; font-size : 20px; margin-right: 25px; margin-top: 30px; float: right;
+}
+
+
+#search_name {
+	font-size: 11px;
+	margin-left: 20px;
+}
+
+#new_album table {
+	margin-top: 15px; padding-top: 15px;
+}
+
+
 #new_album_service {
 	float: left;
 
@@ -213,7 +240,36 @@ section {
 
 #new_album table tr td img {
 width: 100%;	
+opacity: 1.0;
 }
+
+
+
+
+.middle {
+	position: absolute;
+	transition: .5s ease;
+	opacity: 0;
+	transform: translate(0%, -250%);
+	text-align: center;
+	margin-left: 10px;
+	width : 130px;
+	cursor: pointer;
+  }
+
+
+#new_album table tr td:hover .new_album_detail {
+	opacity: 0.2;
+	
+	
+}
+
+#new_album table tr td:hover .middle {
+	opacity: 1.0;
+	
+	
+}
+
 
 #new_album_list{
 	float: right;
@@ -221,7 +277,7 @@ width: 100%;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
 	word-spacing:5px;  /* 자간 간격 */
-}
+}   
 
 #new_album_list a {
 	text-decoration: none;
@@ -250,10 +306,14 @@ width: 100%;
 	color: gray;
 }
 
+#new_album_msg{
+	text-align: center; background-color: rgba(169, 169, 169, 0.295); 
+}
 
 
-
-
+#song_list table {
+	border-collapse: collapse; font-size:15px
+}
 
 
 
@@ -263,19 +323,13 @@ width: 100%;
 
 	#wrap {width: 100%}
 
+	#search_login_img { display: none;}
 	
+	#search_login { display: none;}
+
+	.middle { display : none;}
        
 }
-
-
-
-
-
-
-
-
-
-
 
 .clear {
 	clear: both;

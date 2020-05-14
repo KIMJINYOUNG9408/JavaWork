@@ -33,3 +33,42 @@ function rankhind(i){
        
 }
 
+ // 실검 ajax
+$(document).ready(function(){
+		 
+  // JSON
+  url = "search_rank.json"
+  $.ajax({
+      url : url, 
+      type : "GET",
+      cache : false,
+      success : function(data, status){
+          if(status == "success") parseJSON(data);
+      }
+  });		
+
+});
+
+function parseJSON(jsonObj) {
+var row = jsonObj.search_rank.row;
+
+var word = new Array();
+
+
+for(i=0; i < row.length; i++){
+     word[i] =   (i+1) + "위 : " +  row[i].name
+ }
+ 
+var i = 0;
+
+var interval = setInterval(function(){	
+if(i>20){		
+ i=0;		
+}
+     $("#ranking").html(word[i])
+ i++;	  
+}, 1500);			//1.5초마다 갱신
+
+
+}
+
