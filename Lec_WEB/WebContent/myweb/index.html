@@ -9,6 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="index.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
     
 </head>
 
@@ -60,8 +61,8 @@
                 <img id="search_login_img" src="image/music2.PNG" width="120px" height="120px">
             </a>
             <input type="text" id="search_bar" placeholder="내가 듣고싶은 노래나 알고싶은 가수를 입력하세요.">
-               
-                <span id="search_name">실시간검색어</span>
+                <i class="fas fa-search" id="search_button"></i>
+                <span id="search_name"> 실시간검색어</i></span>
                 
                 <span id="ranking"></span>
                  
@@ -124,7 +125,7 @@
     </section>
     <section id="song_list" class="col-m-12">
           <div>
-              실시간 순위
+              <div id="ranking_search_service">실시간 순위</div>
              <table>
                 <tr style="height: 50px;">
                     <td style="width: 10%; height: 50px">
