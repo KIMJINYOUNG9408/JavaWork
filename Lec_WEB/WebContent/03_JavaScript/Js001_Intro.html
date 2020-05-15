@@ -91,8 +91,15 @@ function myFunction(){
 
 <h2>3. JavaScript 는 Style 를 바꿀수 있다</h3>
 <p id="demo2"
-onmouseover="document.getElementById('demo2').style.color = 'red'"
-onmouseout="this.style.color = 'black'"> <!-- onmouseover = 마우스가 올라갔을때-->
+onclick=" 
+     if(document.getElementById('demo2').style.color == 'black'){
+		document.getElementById('demo2').style.color = 'red'
+	 } else {
+		document.getElementById('demo2').style.color = 'black'
+	 }" 
+
+
+> <!-- onmouseover = 마우스가 올라갔을때-->
 마우스를 올렸다, 내렸다 해보세요.
 </p>
 

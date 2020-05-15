@@ -1,0 +1,52 @@
+{
+    "chart_rank" : {
+
+        "row" : [
+            { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/026/81/333/2681333_500.jpg?8d0315831d6901fafe8fc197f611cc58/melon/resize/260/quality/80/optimize",
+              "Artist" : "TWICE",
+              "Name" : "Cheer Up" 
+               },
+            { "Image" : "https://cdnimg.melon.co.kr/cm2/album/images/104/26/648/10426648_20200506153340_500.jpg/melon/resize/260/quality/80/optimize",
+               "Artist" : "아이유",
+               "Name" : "에잇(Prod.&Feat. SUGA of BTS)" 
+                }, 
+            { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/026/46/282/2646282_500.jpg/melon/resize/260/quality/80/optimize",
+               "Artist" : "아이유",
+                "Name" : "스물셋" 
+             }, 
+            { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/020/40/666/2040666_500.jpg/melon/resize/260/quality/80/optimize",
+                "Artist" : "아이유",
+                 "Name" : "너랑나" 
+            }, 
+            { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/022/22/587/2222587_500.jpg/melon/resize/260/quality/80/optimize",
+               "Artist" : "아이유",
+               "Name" : "금요일에 만나요 (Feat. 장이정 Of HISTORY)" 
+            },
+            { "Image" : "https://cdnimg.melon.co.kr/cm2/album/images/103/46/650/10346650_500.jpg?14a08050b8c6adc879b6e0cf587d456a/melon/resize/260/quality/80/optimize",
+                "Artist" : "아이유",
+                "Name" : "Blueming" 
+                 },
+              { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/022/22/587/2222587_500.jpg/melon/resize/260/quality/80/optimize",
+                 "Artist" : "아이유",
+                 "Name" : "분홍신" 
+                  }, 
+              { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/010/93/562/1093562_500.jpg/melon/resize/260/quality/80/optimize",
+                 "Artist" : "아이유",
+                  "Name" : "삐삐" 
+               }, 
+              { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/009/11/358/911358_500.jpg/melon/resize/260/quality/80/optimize",
+                  "Artist" : "아이유",
+                   "Name" : "잔소리 (With 2AM 슬옹)" 
+              }, 
+              { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/100/96/855/10096855_500.jpg?143adaa26f0aeb5c274cb302ddac684f/melon/resize/260/quality/80/optimize",
+                 "Artist" : "아이유",
+                 "Name" : "잠 못 드는 밤 비는 내리고" 
+              }
+                     
+
+               
+               
+        ]
+    }
+}
+

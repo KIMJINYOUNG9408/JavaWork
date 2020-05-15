@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    
+
+    <style>
+         *{  
+             background-color: gray;
+             color: white;
+             font-size: 13px;
+             box-sizing: border-box;  /* RWD 필수 */
+         }
+         
+        
+
+        table,th,td {
+          border : 1px solid yellow ;
+          border-collapse: collapse;
+        }
+        th,td { 
+          padding: 5px;
+        } 
+
+
+
+        
+        </style>
+</head>
+
+<body>
+    <div style="width: 200px;">
+    <p style="width: 50px;">sdaasddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddsdsdddddddddddddddddddddㅋㅋㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzㅁㄴ암ㄴ욈ㄴ암너왐너옴나오    </p> 
+    <div class="table-responsive" style="width: 1000px; margin-left: 30px; border: 2px solid red;" >
+    <table class="table" id="chart_rank" style="width: 100%;"></table> 
+    </div> 
+     </div>
+    
+    
+</body>
+
+<script>
+
+
+ 
+ $(document).ready(function(){
+		 
+         // JSON
+         url = "test33.json"
+         $.ajax({
+             url : url, 
+             type : "GET",
+             cache : false,
+             success : function(data, status){
+                 if(status == "success") parseJSON(data);
+             }
+         });		
+      
+  });
+
+  function parseJSON(jsonObj) {
+    var row = jsonObj.chart_rank.row;
+    
+    
+	
+	
+    var table = "<tr style='height: 50px;'><td style='width: 5%;'>R</td><td style='width: 10%;'>앨범</td>";	
+    table += "<td style='width: 15%;'>가수</td><td style='width: 30%;'>제목</td><td style='width: 20%;'>Play&View</td></tr>" 
+    for (i = 0; i < row.length; i++) {
+		table += "<tr>"; 
+		table += "<td>"+ (i+1) +"위" + "</td>";
+		table += "<td style='width: 10%; height:70px'> <img src='" + row[i].Image  +  "' width='100%' height='70px' alt='' style='float: left; padding: 0px; margin: 0px;'></td>";
+		table += "<td>" + row[i].Artist + "</td>";
+        table += "<td>" + row[i].Name + "</td>";
+        table += "<td>" + "<i class='fas fa-heart' id='heart" + (i+1)  + "'style= 'color:black;' ondblclick=" 
+            + '"'
+            + "if(document.getElementById('heart" + (i+1) + "').style.color == 'black'){"                   
+            + "this.style.color = 'red'}"
+            + "else{ this.style.color = 'black'}"
+            + '"'
+            +"></i>" + "</td>";
+        table += "<td>" + "<i class='fas fa-play search_button'></i><i class='fas fa-plus-square plus_button'></i><i class='fas fa-video video_button' style= color:pink;'></i>" + "</td>";
+        table += "</tr>"; 
+        
+    }          
+ 
+          
+   
+    $("#chart_rank").html(table)   
+    
+   
+ 
+}
+
+
+ 
+
+
+	
+	
+  
+</script>
+</html>

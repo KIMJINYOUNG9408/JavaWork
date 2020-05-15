@@ -9,7 +9,7 @@ $(document).ready(function(){
 });
 
 
-// 클릭했을때 1번~10번까지 확대시키고 변경시키려는 펑 ~~~ 션
+// 클릭했을때 1번~10번까지 확대시키고 변경시키려는 func
 function ranksee(i){
     var name = "rank" + i;
     var name2 = "rank" + i + "_img";
@@ -21,7 +21,7 @@ function ranksee(i){
        
 }
 
-// 클릭했을때 1번~10번까지 확대된걸 다시 되돌리려는 펑 ~~~ 션
+// 클릭했을때 1번~10번까지 확대된걸 다시 되돌리려는 func
 function rankhind(i){
     var name = "rank" + i;
     var name2 = "rank" + i + "_img";
@@ -33,7 +33,7 @@ function rankhind(i){
        
 }
 
- // 실검 ajax
+ // 실검 ajax func
 $(document).ready(function(){
 		 
   // JSON
@@ -67,8 +67,11 @@ if(i>20){
 }
      $("#ranking").html(word[i])
  i++;	  
-}, 1500);			//1.5초마다 갱신
+}, 1500);			//15초마다 갱신
 
 
 }
+
+
+
 
