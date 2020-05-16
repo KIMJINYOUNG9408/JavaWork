@@ -285,13 +285,32 @@ opacity: 1.0;
 
 
 
-#new_album_list{
+#new_album_list{ 
 	float: right;
 	margin: 10px 30px 0 0;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
-	word-spacing:5px;  /* 자간 간격 */
+	word-spacing:5px;  
 }   
+
+#footer_1{
+	float: right;
+	margin: 10px 30px 0 0;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	word-spacing:5px;  
+	
+}
+
+#footer_1 a {
+	text-decoration: none;
+	color: #D2D2D2	;
+}
+
+#footer_1 a:hover {
+	color: gray;
+}
+
 
 #new_album_list a {
 	text-decoration: none;
@@ -320,13 +339,60 @@ opacity: 1.0;
 	color: gray;
 }
 
-#new_album_msg{
-	text-align: center; background-color: rgba(169, 169, 169, 0.295); 
+
+#footer_2{
+	float: left;
+	margin: 10px 0 0 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	word-spacing:5px;  /* 자간 간격 */
+}
+
+#footer_2 a {
+	text-decoration: none;
+	color: #D2D2D2
+}
+
+#footer_2 a:hover {
+	color: gray;
+}
+
+#footer_3 , #footer_4{
+	float: left;
+	margin: 10px 0 0 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	word-spacing:5px;  /* 자간 간격 */
+	color:gray ;
+	cursor: auto;
 }
 
 
-#song_list table {
-	border-collapse: collapse; font-size:15px
+hr {
+    margin : 0;
+    padding : 0;
+}
+
+
+
+
+
+#new_album_msg{
+	text-align: center; background-color: rgba(169, 169, 169, 0.295); 
+}
+#song_list table th {
+	text-align: center;
+}
+
+
+#song_list table,  #song_list table td, #song_list table th{
+	border-collapse: collapse; font-size:13px; color: #D2D2D2; border: 0.5px solid gray;
+}
+
+#song_list td i {
+	font-size: 20px;
+	margin-left: 10px;
+	margin-top: 10px;
 }
 
 .artist{
@@ -336,12 +402,22 @@ opacity: 1.0;
 
 }
 
-
+footer {
+	height: auto;
+}
 
 .banner {position: relative;  overflow: hidden; width: 130px; height: 150px; margin: 25px; margin-left: 40px; }
 .banner ul {position: absolute; margin: 0px; padding:0; list-style: none; }
 .banner ul li {float: left; margin:0; padding:0;}
 .banner ul li img  { border-radius: 50%;}
+
+#footer_image img{
+	margin-left: 12px;
+}
+
+i , #login, #ranking{
+	cursor: pointer;
+}
 
 @media screen and (max-width: 600px) {
 	.col-m-12 {width: 100%;}
@@ -360,6 +436,9 @@ opacity: 1.0;
 	#search_bar { float: left;}
 	#login {float: left; width: 100%;}
 	#search_button {display: none;}
+	footer {
+		display: none;
+	}
 }
 
 .clear {

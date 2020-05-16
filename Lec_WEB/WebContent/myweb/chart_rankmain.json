@@ -1,0 +1,105 @@
+{
+   "chart_rank" : {
+
+       "row" : [
+         { "Image" : "https://cdnimg.melon.co.kr/cm2/album/images/104/27/559/10427559_20200513160836_500.jpg?d1cde84eb4af4387a7888148f8cd1b25/melon/resize/260/quality/80/optimize",
+            "Artist" : "볼빨간사춘기",
+            "Name" : "품"
+            
+         
+         },
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/102/76/861/10276861_500.jpg?d2129b7aff0c092978fb9dc67c4bd9aa/melon/resize/260/quality/80/optimize",
+            "Artist" : "TWICE",
+            "Name" : "FANCY" 
+         }, 
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/100/18/199/10018199_500.jpg?feac9a5cfa74a764f51242c94baf4d61/melon/resize/260/quality/80/optimize",
+            "Artist" : "버블 사운드",
+            "Name" : "꽃길만 걷자(feat.Fleekman)"
+         },
+         { "Image" : "https://cdnimg.melon.co.kr/cm2/album/images/104/22/058/10422058_20200423151531_500.jpg/melon/resize/260/quality/80/optimize",
+            "Artist" : "솔라(마마무)",
+            "Name" : "뱉어 (Spit it out)" 
+         },
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/026/80/986/2680986_500.jpg?51d984e7762108e5894eb1e871befb28/melon/resize/260/quality/80/optimize",
+            "Artist" : "볼빨간사춘기",
+            "Name" : "싸운날"  
+         },
+         { "Image" : "https://cdnimg.melon.co.kr/cm2/album/images/103/46/650/10346650_500.jpg?14a08050b8c6adc879b6e0cf587d456a/melon/resize/260/quality/80/optimize",
+            "Artist" : "아이유",
+            "Name" : "Blueming"  
+         },
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/100/08/861/10008861_500.jpg/melon/resize/260/quality/80/optimize",
+            "Artist" : "TWICE",
+            "Name" : "TT"
+         }, 
+         { "Image" : "https://cdnimg.melon.co.kr/cm2/album/images/103/27/581/10327581_500.jpg?b81f25944d57699dc88d347943c9fd83/melon/resize/260/quality/80/optimize",
+            "Artist" : "볼빨간사춘기",
+            "Name" : "워커홀릭" 
+         },
+
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/020/40/666/2040666_500.jpg/melon/resize/260/quality/80/optimize",
+            "Artist" : "아이유",
+             "Name" : "너랑나" 
+        }, 
+        { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/101/27/486/10127486_500.jpg/melon/resize/260/quality/80/optimize",
+         "Artist" : "볼빨간사춘기",
+         "Name" : "#첫사랑" 
+         },
+
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/101/00/191/10100191_500.jpg?0e733ba07eeb0fd8a39f04a8eb6291fd/melon/resize/260/quality/80/optimize",
+            "Artist" : "볼빨간사춘기",
+            "Name" : "썸 탈꺼야" 
+         },
+
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/101/07/114/10107114_500.jpg?57aad6cc8a95445b574cd7d06dc6f0ca/melon/resize/260/quality/80/optimize",
+            "Artist" : "TWICE",
+            "Name" : "LIKEY"  
+         }, 
+
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/101/56/195/10156195_500.jpg/melon/resize/260/quality/80/optimize",
+            "Artist" : "TWICE",
+            "Name" : "What is Love?" 
+         },
+
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/026/96/751/2696751_500.jpg/melon/resize/260/quality/80/optimize",
+            "Artist" : "여자친구",
+            "Name" : "너 그리고 나"
+         }, 
+
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/027/07/131/2707131_500.jpg?d12844bf96d3e276ece24c1a2a50fd68/melon/resize/260/quality/80/optimize",
+            "Artist" : "볼빨간사춘기",
+            "Name" : "우주를 줄게" 
+         },
+
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/026/39/273/2639273_500.jpg?139da120f4d8154c47d5a52a074eb525/melon/resize/260/quality/80/optimize",
+            "Artist" : "레드벨벳",
+            "Name" : "Dumb Dumb" 
+         },
+
+         { "Image" : "https://cdnimg.melon.co.kr/cm2/album/images/103/31/167/10331167_500.jpg?15e9ddacaa8b660b4334022e4de95cd5/melon/resize/260/quality/80/optimize",
+            "Artist" : "TWICE",
+            "Name" : "Feel Special"
+         }, 
+
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/026/85/311/2685311_500.jpg/melon/resize/260/quality/80/optimize",
+            "Artist" : "박경",
+            "Name" : "자격지심 (feat.여자친구(은하))" 
+         }, 
+
+         { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/026/46/282/2646282_500.jpg/melon/resize/260/quality/80/optimize",
+            "Artist" : "아이유",
+             "Name" : "스물셋"
+          },          
+
+           { "Image" : "https://cdnimg.melon.co.kr/cm/album/images/026/81/333/2681333_500.jpg?8d0315831d6901fafe8fc197f611cc58/melon/resize/260/quality/80/optimize",
+             "Artist" : "TWICE",
+             "Name" : "Cheer Up"
+              }   
+                     
+
+               
+               
+        ]
+    }
+}
+
