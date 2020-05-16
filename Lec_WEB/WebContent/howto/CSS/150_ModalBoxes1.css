@@ -1,4 +1,4 @@
-@charset "UTF-8";
+
 
 .modal {
     width: 100%;  /* 윈도우 전체 차지 */
@@ -14,8 +14,9 @@
 }
 
 .modal-content {
-    width: 80%;
-    background-color: #fefefe;
+    width: 40%;
+    background-color: gray
+    ;
     margin: 15% auto;  /* top 에서 15%, 좌우 균일(중앙정렬) */
     padding: 20px;
     border: 1px solid #888;

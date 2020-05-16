@@ -67,3 +67,25 @@ $("#chart_rank").html(table)
 
 
 }
+
+
+/* 밑에서부터는 login */
+
+// 버튼 클릭하면 팝업 보이게 하기
+
+
+$(document).ready(function(){
+    $("#button1").click(function(){
+        $("#myModal").css("display","block")
+    })
+
+    $('#closeGo').click(function(){
+    $('#myModal').css("display","none")
+    location.assign('join.html')
+    })
+
+    
+ 
+})
+
+

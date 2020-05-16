@@ -8,16 +8,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="chart.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
+ <!-- chart.css / chart.js 에 css랑 js 가 포함-->
      
     <title>Document</title>
 </head>
 <body>
+ 
+
+
+    
     <div id="wrap">
-
-
+      
+  
         <header id="z" class="col-m-12">
-            <div id="top_menu_login"> <a href="login.html">login</a> | <a href="join.html">Join	</a></div>
+            <div id="top_menu_login"> <a href="#">login</a> | <a href="join.html">Join	</a></div>
             <div id="top_menu_down"> <a href="#">M플레이어 다운</a> |  <a href="#">M플레이어 실행</a> </div>
             <div id="top_menu_service"> <a href="#">이용권구매</a> | <a href="#">캐시충전</a>
                 | <a href="#">뮤직티켓</a>   | <a href="">VIP실</a>  | <a href="#">이벤트</a>
@@ -44,24 +48,57 @@
     
             <nav class="col-m-12" id="menu">
                 <ul>
-                    <li><a href="#">음원차트</a></li>
+                    <li><a href="chart.html">음원차트</a></li>
                     <li><a href="#">최신앨범</a></li>
                     <li><a href="#">아티스트</a></li>       
                     <li><a href="#">시대별</a></li>       
                     <li><a href="#">장르별</a></li>       
                     <li><a href="#">오늘의추천</a></li>                       
-                    <li><a href="login.html">마이뮤직</a></li>
+                    <li><a href="#">마이뮤직</a></li>
                 </ul>  
             </nav> <!-- nav 종료 -->
             <div class="clear"></div>
             
              <hr>
-                <div class="table-responsive">
-                    <table id="chart_rank" class="table">
-                        </table>
-                   
-                </div>
+                <div id="loginDisplay">
+                    <img src="image/music2.PNG" width="300px" height="100px">
+                    <div class="clear"></div>
+                          <input id="inputID" type="text" placeholder="아이디"><br>
+                          <input id="inputPW" type="text" placeholder="비밀번호"><br>
+                          <div class="clear"></div>
+                          <input type="checkbox">아이디저장&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <a href="#">아이디찾기</a>
+                          &nbsp;
+                          <a href="join.html">회원가입 하기</a>
+                          <div class="clear"></div>
+                          <div id="buttonG">
+                          <button id="button1">로그인</button><br>
+                          <button id="button2" >카카오 로그인</button><br>
+                          <button id="button3" >네이버 로그인</button>
+                          </div>
+                          <div id="secret_service"><a href="#">이용약관</a> | <a href="#">위치기반 서비스 이용약관</a>
+                            | <a href="#">개인정보 처리방침</a>   | <a href="">고객센터</a>  | <a href="#">자주묻는질문</a>
+                        
+                       <!-- Modal content -->
+                       <div id="myModal" class="modal">
 
+                        <!-- Modal content -->
+                        <div class="modal-content" id="modal-c">
+                          <span id="closeGo">&times;</span>
+                          
+                          <img src="image/music2.PNG" width="300px" height="100px">
+                          <p>아이디와 비밀번호를 확인하세요<br>닫기버튼을 눌러주세요<br>회원가입창으로 넘어갑니다.</p>
+                          
+                          <div>오류</div>
+                        </div>
+                      
+                      </div>
+      
+
+            </div>
+            </div>
+
+        
                 <hr>     
 
                 <footer>
@@ -104,6 +141,6 @@
 
 
     </div>
-    
+
 </body>
 </html>
