@@ -81,8 +81,7 @@
  </script>
  
 <h4>form2 - 필수 항목</h4>
-<form name="form2" action="https://www.w3schools.com/action_page.php" method="get" 
-	onsubmit="return chkSubmit();" > <!-- 반드시 onsubmit 에 return 해야 한다 -->
+<form name="form2"  method="get" onsubmit="return chkSubmit();" > <!-- 반드시 onsubmit 에 return 해야 한다 -->
   First name:
   <input type="text" name="firstname"> <span class="important">*</span>   <!-- 기본값 value 가 없다. -->
   <br><br>
@@ -106,12 +105,13 @@
 			frm.age.focus();
 			return false; // submit 안함
 		}
-
+	 alert("가입")
+		
 	return true;
 	}
 
 </script>
-<form name="form3" action="https://www.w3schools.com/action_page.php"
+<form name="form3" action="Js001_Intro.html"
 	method="get" onsubmit="return chkSubmit3();"> 
 	나이 (1~130): <input type="text" name="age">
 	<br><br>

@@ -69,7 +69,7 @@ $("#chart_rank").html(table)
 }
 
 
-/* 밑에서부터는 login */
+/* 밑에서부터는 login에 추가된것 */
 
 // 버튼 클릭하면 팝업 보이게 하기
 
@@ -89,3 +89,65 @@ $(document).ready(function(){
 })
 
 
+/* 밑에서부터는 회원가입에 추가 */
+
+function chkSubmit(){
+    var frm = document.forms['form2'];
+    
+    var age = frm.Age.value.trim();
+  
+    
+     
+
+
+     if(frm['PW1'].value.trim() == ""){
+        $("#myModal").css("display","block") 
+
+        $('#closeGo2').click(function(){
+            $('#myModal').css("display","none")
+            frm['PW1'].focus()
+            })
+
+      
+        return false;
+    } else if(frm['PW2'].value.trim() == ""){
+        $("#myModal").css("display","block") 
+
+        $('#closeGo2').click(function(){
+            $('#myModal').css("display","none")
+            frm['PW2'].focus()
+            })
+            
+        return false;
+    }
+    else {
+        if(frm['PW1'].value.trim() != frm['PW2'].value.trim() ){
+            $("#myModal").css("display","block") 
+
+            $('#closeGo2').click(function(){
+                $('#myModal').css("display","none")
+                frm['PW1'].focus()
+                })
+             
+           
+            return false;
+            
+        }
+        if(isNaN(age) || age > 130 || age <= 0) {
+            $("#myModal").css("display","block") 
+    
+            $('#closeGo2').click(function(){
+                $('#myModal').css("display","none")
+                frm['Age'].focus()
+                })
+    
+            return false;
+         }  
+    }
+        
+   
+       
+  
+     alert("회원가입 축하드립니다.\n로그인 후 이용해주세요.")
+    return true;   // onsubmit 에 true를 리턴하면 submit 진행된다 
+}

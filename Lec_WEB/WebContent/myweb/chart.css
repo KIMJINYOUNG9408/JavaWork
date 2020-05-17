@@ -313,7 +313,7 @@ footer {
 }
 
 .modal-content {
-	width: 30%;
+	width: 50%;
 	height: 50%;
     background-color: rgba(128, 128, 128, 0.705)
     ;
@@ -322,14 +322,21 @@ footer {
     border: 1px solid #888;
 }
 
-#closeGo {
+#closeGo, #closeGo2 {
     font-size: 28px;
     font-weight: bold;
     color: #aaa;
     float: right;
 }
 
+
 #closeGo:hover, #closeGo:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#closeGo2:hover, #closeGo2:focus {
     color: white;
     text-decoration: none;
     cursor: pointer;
@@ -358,6 +365,7 @@ p {
 	footer { display: none;}
 
 	#modal-c img, p {display: none;}
-
+	
+	
 
 }
