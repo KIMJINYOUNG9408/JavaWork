@@ -45,6 +45,7 @@ function chkSubmit(){  // 폼 검증
 <button type="button" onclick="location.href='list.jsp'">목록으로</button>
 
 
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
 

@@ -1,17 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import = "java.sql.*"%> <%-- JDBC 관련 import --%>  
+<%@ page import = "java.sql.*"%> <%-- JDBC 관련 import --%>
 
 <% // parameter 받아오기
-	request.setCharacterEncoding("utf-8"); // 한글 인코딩 꼭
+	request.setCharacterEncoding("utf-8");  // 한글 인코딩 꼭!
 	int uid = Integer.parseInt(request.getParameter("uid"));
 	String subject = request.getParameter("subject");
 	String content = request.getParameter("content");
-	// ※ 이 단계에서 parameter 검증 필요 .
-
-
+	// ※ 이 단계에서 parameter 검증 필요
 %>
-  
+    
 <%!
 	// JDBC 관련 기본 객체변수
 	Connection conn = null;
@@ -28,9 +26,9 @@
 %>
 
 <%!
+	// 쿼리문 준비
 	final String SQL_WRITE_UPDATE = 
-		"UPDATE test_write SET wr_subject = ?, wr_content = ? WHERE wr_uid = ?";
-	
+			"UPDATE test_write SET wr_subject = ?, wr_content = ? WHERE wr_uid = ?";
 %>
 
 <%
@@ -64,8 +62,7 @@
 	}
 %>
 <%-- 위 트랜잭션이 마무리 되면 페이지 보여주기 --%>
-
-<% if (cnt == 0) { %>
+<% if(cnt == 0){ %>
 	<script>
 		alert('수정 실패');
 		history.back();
@@ -73,7 +70,22 @@
 <% } else { %>
 	<script>
 		alert('수정 성공');
-		location.href = "view.jsp?uid=<%= uid %>";
+		location.href = "view.jsp?uid=<%= uid%>";
 	</script>
-
 <% } %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

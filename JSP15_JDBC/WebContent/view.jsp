@@ -143,7 +143,7 @@ UID : <%= uid %><br>
 <button onclick="chkDelete(<%= uid %>)">삭제하기</button>
 <button onclick="location.href = 'write.jsp'">신규등록</button>
 
-
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 </body>
 </html>
 

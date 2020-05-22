@@ -7,7 +7,7 @@ public class Calculator {
 	private int status = 0; // 상태
 	int i, j = 0;
 
-	public Calculator() { // 기본생성자 (안만들어도 되는데 그냥 만
+	public Calculator() { // 기본생성자 (안만들어도 되는데 그냥 만듬).
 
 	}
 
@@ -38,7 +38,7 @@ public class Calculator {
 			setOperator(check); // 연산자를 필드에저장
 			break;
 		}
-
+		printStatus(); // run 에서 출력해줌
 	}
 
 	public void initField() { // 필드를 초기화한다 0으로 메모리 빼고
