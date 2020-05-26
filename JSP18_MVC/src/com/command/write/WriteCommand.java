@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.lec.beans.WriteDAO;
+import com.lec.beans.WriteDTO;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.REUtil;
 
 public class WriteCommand implements Command {
@@ -15,7 +16,7 @@ public class WriteCommand implements Command {
 		
 		int cnt = 0;
 		WriteDAO dao = new WriteDAO();
-		
+	
 		// 매개변수 받아오기
 		String name = request.getParameter("name");
 		String subject = request.getParameter("subject");
