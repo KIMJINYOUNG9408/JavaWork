@@ -18,7 +18,7 @@
 		<h2>로그인 상태가 아닙니다</h2>
 		<form action="loginOk.jsp">
 			id: <input type="text" name="userid"><br>
-			pw: <input type="password" name="pw"><br>
+			pw: <input type="password" name="pw"><br>`
 			<input type="submit" value="로그인"><br>
 		</form>		
 	<%}%>

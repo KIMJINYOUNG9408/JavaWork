@@ -2,6 +2,7 @@
 /* Drop Tables */
 
 DROP TABLE test_write CASCADE CONSTRAINTS;
+DROP TABLE A_TEST CASCADE CONSTRAINTS;
 
 
 /* Create Tables */
@@ -21,7 +22,36 @@ CREATE TABLE test_write
 CREATE SEQUENCE TEST_WRITE_SEQ;
 
 SELECT * FROM test_write;
+CREATE SEQUENCE a_test_SEQ;
 
+CREATE TABLE a_test
+(
+	a_uid number NOT NULL,
+	user_id varchar2(30),
+	user_pw varchar2(30),
+	user_name varchar2(20),
+	user_age number,
+	user_gender char,
+	user_jumin varchar2(13),
+	user_authorize number,
+	user_img varchar2(60),
+	PRIMARY KEY (a_uid)
+);
+INSERT INTO a_test VALUES
+(a_test_SEQ.nextval, 'kalkungo' , '1234' , '김진영' , 27 , 'M' , '94081211' , 1, 'X' );
+
+
+SELECT * FROM a_test;
+
+SELECT user_id FROM a_test WHERE user_name = '김진영' AND user_jumin = '94081211';
+SELECT user_pw FROM a_test WHERE user_name = '김진영' AND user_jumin = '94081211' AND user_id = 'kalkungo';
+
+SELECT count(user_id)
+FROM a_test
+WHERE user_id ='kalkungo' AND user_pw = '123';
+UPDATE a_test SET user_pw = '12345678' WHERE user_id = 'kalkungo';
+
+DELETE FROM a_test WHERE user_id = 'kalkungo2'; 
 -- 기본데이터 작성
 INSERT INTO TEST_WRITE VALUES
 (TEST_WRITE_SEQ.nextval, '첫째글:방가요', '안녕하세요', '김희철', 0, '2017-03-02');
@@ -44,7 +74,8 @@ INSERT INTO test_write(wr_uid, wr_subject, wr_content, wr_name)
 DELETE FROM test_write WHERE wr_uid > 10;
 
 
-
+SELECT 
+FROM test_a 
 
 
 
