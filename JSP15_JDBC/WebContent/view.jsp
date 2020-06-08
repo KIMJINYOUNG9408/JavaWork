@@ -5,7 +5,6 @@
 
 <%  // parameter 받아오기
 	int uid = Integer.parseInt(request.getParameter("uid"));
-	System.out.println(uid);
 	// ※ 이 단계에서 parameter 검증 필요
 %>
 

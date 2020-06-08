@@ -74,8 +74,8 @@ INSERT INTO test_write(wr_uid, wr_subject, wr_content, wr_name)
 DELETE FROM test_write WHERE wr_uid > 10;
 
 
-SELECT 
-FROM test_a 
+SELECT *
+FROM test_write; 
 
 
 

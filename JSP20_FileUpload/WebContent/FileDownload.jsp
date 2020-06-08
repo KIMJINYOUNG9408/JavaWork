@@ -70,7 +70,7 @@
 	byte [] buff = new byte[5 * 1024 * 1024];  // 5M
 	int numRead = 0;
 	int totalRead = 0;
-	 
+	
 	try{
 		// 파일로 부터 읽기
 		while((numRead = in.read(buff, 0, buff.length)) != -1){
