@@ -13,10 +13,8 @@ public class WriteDTO {
 	private String subject;   //wr_subject
 	private String content;   //wr_content
 	private String name;  // wr_name
-	
 	@JsonProperty("viewcnt")
 	private int viewCnt;   // wr_viewcnt
-	
 	@JsonProperty("regdate")
 	private String regDate;   // wr_regdate
 	

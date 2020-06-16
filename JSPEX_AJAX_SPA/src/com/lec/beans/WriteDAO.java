@@ -125,21 +125,21 @@ public class WriteDAO {
 		return arr;
 	} // end select()
 	
-	// 페이징 관련 
-	// 몇번째 from 부터 몇개 row를 SELECT
+	// 페이징 관련
+	// 몇번째 from 부터 몇개 rows 를 SELECT
 	public WriteDTO [] selectFromRow(int from, int rows) throws SQLException {
 		WriteDTO [] arr = null;
+		
 		try {
 			pstmt = conn.prepareStatement(D.SQL_WRITE_SELECT_FROM_ROW);
-			pstmt.setInt(1, from);
-			pstmt.setInt(2, from + rows);
+			pstmt.setInt(1,  from);
+			pstmt.setInt(2,  from + rows);
 			rs = pstmt.executeQuery();
-			arr = createArray(rs);
-			
-			
+			arr = createArray(rs);			
 		} finally {
 			close();
-		}
+		} // end try
+		
 		return arr;
 	} // end selectFromRow()
 	
@@ -154,10 +154,12 @@ public class WriteDAO {
 			cnt = rs.getInt(1);
 		} finally {
 			close();
-		}
+		} // end try
 		
 		return cnt;
-	} //  end countAll()
+	} // countAll()
+	
+	
 	
 	
 	// 특정 uid 의 글 내용 읽기, 조회수 증가
@@ -242,7 +244,7 @@ public class WriteDAO {
 		return cnt;
 	} // end deleteByUid()
 	
-	// 특정 uid 글(들) 삭제하기 
+	// 특정 uid 글(들) 삭제하기
 	public int deleteByUid(int [] uids) throws SQLException {
 		if(uids == null || uids.length == 0) return 0;
 		
@@ -253,18 +255,18 @@ public class WriteDAO {
 			for(int uid : uids) {
 				sql.append(uid + ",");
 			}
-			sql.deleteCharAt(sql.lastIndexOf(",")); // 맨 끝에 콤마 삭제
-			sql.append("(");
+			sql.deleteCharAt(sql.lastIndexOf(","));  // 맨 끝의 콤마 삭제
+			sql.append(")");
 			
 			stmt = conn.createStatement();
 			cnt = stmt.executeUpdate(sql.toString());
+					
 		} finally {
 			close();
-		}
+		} // end try		
 		
 		return cnt;
-	} // end deleteByUid
-	
+	} // end deleteByUid()
 	
 	
 	

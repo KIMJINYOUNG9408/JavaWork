@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 public class AjaxWriteList extends AjaxWriteResult {
 	@JsonProperty("data")
 	private List<WriteDTO> list;  // 데이터 목록
-
+	
 	private int page;   // 현재 페이지 #
 	
 	@JsonProperty("totalpage")
@@ -16,7 +16,7 @@ public class AjaxWriteList extends AjaxWriteResult {
 	@JsonProperty("totalcnt")
 	private int totalCnt;   // 데이터(글)은 총 몇개?
 	
-	@JsonProperty("wirtepages")
+	@JsonProperty("writepages")
 	private int writePages;   // 한[페이징]에 몇개의 '페이지'를 표현할 것인가
 	
 	@JsonProperty("pagerows")

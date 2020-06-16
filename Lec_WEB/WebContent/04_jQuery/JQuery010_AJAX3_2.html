@@ -56,14 +56,17 @@ var api_key = "54416e74676b616c373055434c526e";
 		 var stationname = document.getElementById("stationname").value.trim();
 		 
 		 // XML
-		 var url = "http://swopenAPI.seoul.go.kr/api/subway/" + api_key + "/xml/stationInfo/0/5/" +stationname;
-		
+		 var url = 'http://ws.bus.go.kr/api/rest/arrive/getLowArrInfoByStId';
+		 var queryParams = '?' + encodeURIComponent('ServiceKey') + '=f5XGi6uNgZy%2FRhoPbCtvsvHGs%2Fd4nQuTu0WUXEEQTRP0bQ81HIYik8ja0nbO6hZSq8CD5mDshJgOnMv2IPXhpA%3D%3D'; /* Service Key*/
+		 queryParams += '&' + encodeURIComponent('stId') + '=' + encodeURIComponent('123000004'); /* */
 		$.ajax({
-			url : url,
+			url : url+queryParams,
 			type : "GET",
 			cache : false,
 			success : function(data, status){
-				if(status == "success") parseXML(data);
+				
+				if(status == "success") alert('야');
+				parseXML(data);
 			}
 		});
 		 
@@ -88,13 +91,13 @@ var api_key = "54416e74676b616c373055434c526e";
  });
 
  function parseXML(xmlDOM) {
-	var table = "<tr><th>역명</th><th>아이디</th><th>호선</th><th>영문명</th></tr>";
-	$(xmlDOM).find("row").each(function(){
+	var table = "<tr><th>1전</th><th>2전</th><th>버스번호</th></tr>";
+	$(xmlDOM).find("itemList").each(function(){
 		table += "<tr>";
-		table += "<td>" + $(this).find("statnNm").text() + "</td>";
-		table += "<td>" + $(this).find("subwayId").text() + "</td>";
-		table += "<td>" + $(this).find("subwayNm").text() + "</td>";
-		table += "<td>" + $(this).find("statnNmEng").text() + "</td>";		
+		table += "<td>" + $(this).find("arrmsg1").text() + "</td>";
+		table += "<td>" + $(this).find("arrmsg2").text() + "</td>";
+		table += "<td>" + $(this).find("rtNm").text() + "</td>";
+			
 		table += "</tr>";
 	});
 	$("#demoXML").html(table);

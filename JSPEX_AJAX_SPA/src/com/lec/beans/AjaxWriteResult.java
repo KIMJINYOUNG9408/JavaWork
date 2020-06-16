@@ -5,6 +5,14 @@ public class AjaxWriteResult {
 	private String status;  // 처리 결과
 	private String message;  // 결과 메세지
 	
+	/*
+	{
+		count : ○○○,
+		status : ○○○,
+		message : ○○○
+	}
+	 */
+	
 	public AjaxWriteResult() {}
 	
 	public int getCount() {
