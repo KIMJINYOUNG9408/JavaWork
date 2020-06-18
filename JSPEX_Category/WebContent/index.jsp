@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath }/CSS/common.css"/>
@@ -15,13 +16,14 @@
 <body>
 <div class="cate" id="mycate">
 <span>
-	<select disabled></select>
+
+	<select id="first" disabled></select>
 </span>
 <span>
-	<select disabled></select>
+	<select id="second" disabled></select>
 </span>
 <span>
-	<select disabled></select>
+	<select id="third" disabled></select>
 </span>
 </div>
 

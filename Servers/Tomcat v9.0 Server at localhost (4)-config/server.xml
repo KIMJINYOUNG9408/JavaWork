@@ -127,7 +127,7 @@
 				
 				
 				
-			<Context docBase="JSPEX_Category2" path="/JSPEX_Category2" reloadable="true" source="org.eclipse.jst.jee.server:JSPEX_Category2"/></Host>
+			<Context docBase="JSPEX_Category2" path="/JSPEX_Category2" reloadable="true" source="org.eclipse.jst.jee.server:JSPEX_Category2"/><Context docBase="JSPEX_Category" path="/JSPEX_Category" reloadable="true" source="org.eclipse.jst.jee.server:JSPEX_Category"/></Host>
 		</Engine>
 	</Service>
 </Server>

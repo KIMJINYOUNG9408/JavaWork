@@ -1,2 +1,20 @@
 @charset "UTF-8";
 
+
+select {
+width: 200px;
+padding: .8em .5em;
+border: 1px solid #999;
+font-family: inherit;
+
+border-radius: 0px;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+text-align: center;
+font-weight: bolder;
+margin-top: 50px;
+margin-left: 10px;
+}
+
+

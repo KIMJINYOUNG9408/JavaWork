@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	
+		<bean id="Op" class="ex2_1.PlusOp">
+		<constructor-arg value="20"/>
+		<constructor-arg value="31"/>
+		</bean>
+		
+		<bean id="Op2" class="ex2_1.MinusOp">
+		<constructor-arg value="50"/>
+		<constructor-arg value="31"/>
+		</bean>
+
+</beans>
