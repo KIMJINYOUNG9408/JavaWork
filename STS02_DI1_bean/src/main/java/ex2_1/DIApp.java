@@ -3,7 +3,7 @@ package ex2_1;
 import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-import com.lec.spring.Score;
+
 
 public class DIApp implements OperatorBean {
 	
