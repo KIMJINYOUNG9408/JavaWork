@@ -16,7 +16,7 @@ public class LifeCycleMain01 {
 		
 		// 나중에 설정을 load 할수 있다.
 		ctx.load("classpath:appCtx01_A.xml"); // 설정
-		System.out.println("설정 load 완료");
+		System.out.println("설정 load 완료"); 
 		
 		ctx.refresh(); //
 		System.out.println("컨테이너 refresh 완료");
