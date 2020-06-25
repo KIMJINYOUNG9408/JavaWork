@@ -75,4 +75,6 @@ public class HomeController {
 	public String doMember() {
 		return "member/doMember";
 	}
+	
+	
 }
