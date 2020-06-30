@@ -10,9 +10,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.lec.beans.WriteDTO;
 
@@ -138,18 +141,71 @@ public class HomeController {
 //	}
 	
 	
+//	@RequestMapping(value = "/board/writeOk", method= RequestMethod.POST)
+//	public String writeOkBoard(WriteDTO dto) {
+//			
+//		System.out.println(dto);
+		// 커맨드 객체 사용
+//		return "board/writeOk";
+//		
+//	}
+	
 	@RequestMapping(value = "/board/writeOk", method= RequestMethod.POST)
-	public String writeOkBoard(WriteDTO dto) {
+	// 커맨드 객체에 attribute id 변경
+	public String writeOkBoard(@ModelAttribute("DTO") WriteDTO dto) {
 			
-		
+		System.out.println(dto);
 		return "board/writeOk";
 		
+	}	
+	
+	// @PathVariable
+	@RequestMapping("/board/writePath/{name}/{subject}/{content}")
+	public String writePathBoard(Model model,
+			@PathVariable String name,
+			@PathVariable String subject,
+			@PathVariable String content
+			) {
+		model.addAttribute("name",name);
+		model.addAttribute("subject",subject);
+		model.addAttribute("content",content);
+		
+		return "board/writepath";
 	}
 	
+	@RequestMapping("/member/ageCheck")
+	public String chkAge(int age,
+			RedirectAttributes redirectAttr) {
+		
+		redirectAttr.addAttribute("age", age);		
+		
+		if(age < 19) { // 미성년자
+			return "redirect:/member/underAge";
+		} else {
+			return "redirect:/member/adult";
+		}
+	}
 	
+	@RequestMapping("/member/underAge")
+	public String pageUnderAge(
+			@RequestParam("age") int age, Model model
+			) {
+		model.addAttribute("age",age);
+		
+		return "member/ageUnder";
+	}
 	
+	@RequestMapping("/member/adult")
+	public String pageAdult(@RequestParam("age") int age, Model model) {
+		model.addAttribute("age",age);
+		
+		return "member/ageAdult";
+	}
 	
-	
+	@RequestMapping(value ="/common") // common 으로 요청이 오면
+ 	public String cccmmm() { 	// cccmmm() 핸들러가 수행되고
+		return "comn"; // --> WEB-INF/views/comn.jsp 를 리턴하여 response 되게 한다.
+	}
 	
 	
 	
