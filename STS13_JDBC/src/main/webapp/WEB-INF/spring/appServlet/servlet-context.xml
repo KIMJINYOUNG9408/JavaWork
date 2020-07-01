@@ -35,6 +35,8 @@
 	<beans:bean name="template" class="org.springframework.jdbc.core.JdbcTemplate">
 		<beans:property name="dataSource" ref="dataSource"/>
 	</beans:bean>
+	
+
 
 	
 	
