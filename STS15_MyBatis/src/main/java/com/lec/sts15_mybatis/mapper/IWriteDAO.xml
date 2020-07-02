@@ -32,8 +32,15 @@
     		
     		</update>
     		
+    		<!--  
     		 <update id="update" parameterType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
     	   UPDATE test_write SET wr_subject = #{subject}, wr_content = #{content} WHERE wr_uid = #{uid}
+    
+    		</update>
+    		-->
+    		
+    		<update id="update" flushCache="true">
+    	   UPDATE test_write SET wr_subject = #{a.subject}, wr_content = #{a.content} WHERE wr_uid = #{param1}
     
     		</update>
     		
@@ -41,6 +48,11 @@
     		DELETE FROM test_write WHERE wr_uid = #{param1}
     		</delete>
     		
+    		<!--  
+    		<select id="searchBySubject" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO"> 
+    		
+    		</select>
+    		-->
     		
     	
     </mapper>

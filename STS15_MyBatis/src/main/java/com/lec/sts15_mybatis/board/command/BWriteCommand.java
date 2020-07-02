@@ -21,8 +21,11 @@ public class BWriteCommand implements BCommand {
 //		model.addAttribute("result", result);
 		
 		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
-//		model.addAttribute("result", dao.insert(dto));
-		model.addAttribute("result", dao.insert(dto.getSubject(), dto.getContent(), dto.getName()));
+		model.addAttribute("result", dao.insert(dto));
+		System.out.println(dto.getUid());
+		System.out.println(dto.getName());
+		System.out.println(dto.getRegDate());
+//		model.addAttribute("result", dao.insert(dto.getSubject(), dto.getContent(), dto.getName()));
 	}
 
 }
