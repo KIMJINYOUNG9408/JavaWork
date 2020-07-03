@@ -57,7 +57,7 @@ function loadPage(page){
 	
 	$.ajax({
 		url : "list.ajax?page=" + page + "&pageRows=" + pageRows
-		, type : "GET"
+		, type : "GET"	
 		, cache : false
 		, success : function(data, status){
 			if(status == "success"){

@@ -48,7 +48,7 @@ public class OldController {
 		return "old/updateOk";
 	}
 	
-	@RequestMapping("/deleteOk.do")
+	@RequestMapping("/deleteOk.do") 
 	public String deleteOk(HttpServletRequest request, HttpServletResponse response) {
 		new DeleteCommand().execute(request, response);
 		return "old/deleteOk";

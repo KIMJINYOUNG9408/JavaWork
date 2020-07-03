@@ -15,7 +15,7 @@ import com.lec.sts19_rest.board.beans.IWriteDAO;
 @RequestMapping("/board")
 public class SpaController {
 	
-	@RequestMapping("/rest/ajax")
+	@RequestMapping("/rest/list.ajax")
 	public List<BWriteDTO> listJSONGO() {
 		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
 		return dao.select();
