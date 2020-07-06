@@ -85,7 +85,7 @@ public class BoardController {
 		return "board/deleteOk";
 	}
 	
-	@RequestMapping("/rest")
+	@RequestMapping(value = "/rest")
 	public String rest() {
 		return "board/rest";
 	}
