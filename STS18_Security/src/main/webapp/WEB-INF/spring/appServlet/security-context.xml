@@ -12,6 +12,11 @@
 	
 	<bean id="customLoginSuccess"
 		class="com.lec.sts18_security.security.CustomLoginSuccessHandler"/>
+	<!-- 		
+	<bean id="customPasswordEncoder" class="com.lec.sts18_security.security.CustomNoOpPasswordEncoder"></bean>	
+	-->
+	
+	<bean id="brcyptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"/>
 	
 	<!-- 컨테이너의 HTTP security 요소 -->
 	<security:http>
@@ -39,11 +44,25 @@
 	<security:authentication-manager>
 		<!-- UserDetailsService 사용자 인증과 권한 처리 -->
 		<security:authentication-provider>
+				<!-- InMemory 방식. -->
+				<!--  
 			<security:user-service>
 				<security:user name="member" password="{noop}member" authorities="ROLE_MEMBER"/>
 				<security:user name="admin" password="{noop}admin" authorities="ROLE_MEMBER, ROLE_ADMIN"/>
 				
 			</security:user-service>
+			-->
+			
+			<!--  JDBC 방식 -->
+			<security:jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="SELECT userid username, userpw password, enabled FROM tbl_member WHERE userid = ?"
+				authorities-by-username-query="SELECT userid username, auth authority FROM tbl_member_auth WHERE userid = ?"/>
+			
+			<!-- PasswordEncoder 설정 -->
+			<!--  
+			<security:password-encoder ref="customPasswordEncoder"/>
+			-->
+			<security:password-encoder ref="brcyptPasswordEncoder"/>
 		</security:authentication-provider>
 	
 	</security:authentication-manager>	
