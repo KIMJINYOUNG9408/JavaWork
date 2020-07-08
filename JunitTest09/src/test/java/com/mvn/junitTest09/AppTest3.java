@@ -45,7 +45,7 @@ public class AppTest3 {
 		assertEquals(expected, app.toNumber(valueOne));
 		System.out.println("테스트 통과 " + expected + ":" + valueOne);
 		System.out.println();
-		
+		 
 	}
 	
 	@BeforeClass
