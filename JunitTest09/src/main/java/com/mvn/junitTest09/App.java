@@ -11,14 +11,14 @@ public class App {
 		System.out.println("Hello World!");
 	}
 
-	// 실습 1
+	// 실습 1 
 	public void sortArr(int[] arr) {
 		Arrays.sort(arr);
 	}
 
-	// 실습 2
+	// 실습 2 
 	public int max(int [] arr) {
-    	Arrays.sort(arr);
+    	Arrays.sort(arr); 
     	 
     	
     	return arr[arr.length-1];
