@@ -68,6 +68,7 @@ public class Class01Main {
 	    System.out.println(tv1); 
 	    System.out.println(tv2);  // 주소값이 같아진걸 확인할 수 있다.
 		System.out.println("\n프로그램 종료");
+		
 	} // end main()
 
 } // end class

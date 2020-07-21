@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.lec.sts15_mybatis.board.C;
 import com.lec.sts15_mybatis.board.beans.BWriteDTO;
 import com.lec.sts15_mybatis.board.command.BCommand;
+import com.lec.sts15_mybatis.board.command.BCompanyListCommand;
 import com.lec.sts15_mybatis.board.command.BDeleteCommand;
 import com.lec.sts15_mybatis.board.command.BListCommand;
 import com.lec.sts15_mybatis.board.command.BSelectCommand;
@@ -41,7 +42,11 @@ public class BoardController {
 	}
 
 	@RequestMapping("/list.do")
-	public String list(Model model) {
+	public String list(Model model, String category, String page, String col, String word) {
+		model.addAttribute("category", category);
+		model.addAttribute("page", page);
+		model.addAttribute("col", col);
+		model.addAttribute("word", word);
 		command = new BListCommand();
 		command.execute(model);
 		return "board/list";
@@ -49,6 +54,8 @@ public class BoardController {
 	
 	@RequestMapping("/write.do")
 	public String write(Model model) {
+		command = new BCompanyListCommand();
+		command.execute(model);
 		return "board/write";
 	}
 	

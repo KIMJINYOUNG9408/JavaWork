@@ -6,18 +6,40 @@
     <mapper namespace="com.lec.sts15_mybatis.board.beans.IWriteDAO">
     	<select id="select" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
     		SELECT 
-    			wr_uid "uid",
-    			wr_subject subject,
-		    	wr_content content,
-		    	wr_name name,
-		    	wr_viewcnt viewcnt, 
-				wr_regdate regdate
+    			b_uid "uid",
+    			b_subject subject,
+		    	b_content content,
+		    	b_regdate regdate,
+		    	b_viewcnt viewcnt,
+		    	b_category category,
+		    	u_uid,
+		    	c_uid 
+				
 			FROM
-			 	test_write
+			 	testboard
 			ORDER BY
-			 	wr_uid DESC  	
+			 	b_uid DESC  	
     	
-    	</select>    
+    	</select>   
+    	
+    	  
+    	
+    	<select id="selectCompany" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
+    		SELECT c_uid, c_name companyName
+    		from testcompany
+    	</select>
+    	
+    	<select id="countAll" resultType="int">
+    		SELECT count(*) FROM testboard
+    	</select>
+    	
+    	<select id="selectByPages" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
+    		<![CDATA[
+    		SELECT * FROM ( SELECT rownum AS rnum , b.*  FROM (SELECT b.b_uid "uid", b.b_subject subject, b.b_content content, b.b_regdate regdate, b.b_viewcnt viewcnt, b.b_category category, u.u_id writeName, c.C_NAME companyName FROM testboard b, testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID = c.c_uid AND b.b_category != '공지사항' ORDER BY b_uid DESC ) b  
+					) 
+					WHERE rnum >= #{param1} AND rnum < (#{param1} + #{param2})
+    		]]> 
+    	</select>
     	
     	    <select id="selectByUid" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
     	   SELECT wr_uid "uid", wr_subject subject,
@@ -26,6 +48,36 @@
 			FROM test_write WHERE wr_uid= #{param1}
     
     		</select>
+    		
+    		<select id="countAllByCategory" resultType="int" >
+    		SELECT count(*) FROM testboard WHERE b_category = #{param1}
+    		</select>
+    		
+    		<select id="countAllBySearch" resultType="int">
+    		SELECT count(*) FROM testboard b , testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID  = c.C_UID  AND ( UPPER( b.b_subject) LIKE  upper('%'||#{param1}||'%')  OR  upper (c.C_NAME) LIKE upper('%'||#{param1}||'%') )
+    		</select>
+    		
+    		<select id="selectByCategory" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
+    	     <![CDATA[
+    		SELECT * FROM ( SELECT rownum AS rnum , b.*  FROM (SELECT b.b_uid "uid", b.b_subject subject, b.b_content content, b.b_regdate regdate, b.b_viewcnt viewcnt, b.b_category category, u.u_id writeName, c.C_NAME companyName FROM testboard b, testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID = c.c_uid AND  ORDER BY b_uid DESC ) b  
+					) 
+					WHERE rnum >= #{param2} AND rnum < (#{param2} + #{param3})
+    		]]> 
+ 
+    		</select>
+    		
+    		<select id="selectBySearch" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
+    		 <![CDATA[
+    		SELECT * FROM ( SELECT rownum AS rnum , b.*  FROM (SELECT b.b_uid "uid", b.b_subject subject, b.b_content content, b.b_regdate regdate, b.b_viewcnt viewcnt, b.b_category category, u.u_id writeName, c.C_NAME companyName FROM testboard b, testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID = c.c_uid AND ( UPPER( b.b_subject) LIKE  upper('%'||#{param1}||'%')  OR  upper (c.C_NAME) LIKE upper('%'||#{param1}||'%') )  ORDER BY b_uid DESC ) b  
+					) 
+					WHERE rnum >= #{param2} AND rnum < (#{param2} + #{param3})
+			]]> 
+    		</select>
+    		
+    		<select id="selectNotice" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
+    			SELECT b.b_uid "uid", b.b_subject subject, b.b_content content, b.b_regdate regdate, b.b_viewcnt viewcnt, b.b_category category, u.u_id writeName, c.C_NAME companyName FROM testboard b, testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID = c.c_uid AND b.b_category = '공지사항' ORDER BY b_uid DESC
+    		</select>
+    		
     		
     		<update id="incViewCnt" flushCache="true">
     		UPDATE test_write SET wr_viewcnt = wr_viewcnt + 1 WHERE wr_uid = #{param1}

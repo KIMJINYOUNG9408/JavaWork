@@ -15,6 +15,7 @@ public class BViewCommand implements BCommand {
 	public void execute(Model model) {
 		Map<String, Object> map = model.asMap();
 		int uid = (Integer)map.get("uid");
+		System.out.println(uid);
 //		BWriteDAO dao = new BWriteDAO();
 //		BWriteDTO dto = dao.readByUid(uid);
 //		model.addAttribute("list", Arrays.asList(dto));
