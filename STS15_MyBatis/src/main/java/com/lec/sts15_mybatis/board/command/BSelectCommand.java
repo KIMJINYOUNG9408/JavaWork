@@ -19,7 +19,7 @@ public class BSelectCommand implements BCommand {
 //		BWriteDTO dto = dao.selectByUid(uid);
 //		model.addAttribute("list", Arrays.asList(dto));
 		IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
-	
+		model.addAttribute("comlist", dao.selectCompany());
 		model.addAttribute("list", Arrays.asList(dao.selectByUid(uid)));
 
 	}

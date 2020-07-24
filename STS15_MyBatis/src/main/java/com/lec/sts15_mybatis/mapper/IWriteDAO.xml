@@ -42,14 +42,16 @@
     	</select>
     	
     	    <select id="selectByUid" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
-    	   SELECT wr_uid "uid", wr_subject subject,
-			wr_content content, wr_name name, wr_viewcnt viewcnt,
-			wr_regdate regdate 
-			FROM test_write WHERE wr_uid= #{param1}
-    
+ 				SELECT 
+ 				 b.b_uid "uid", b.b_subject subject,
+ 				 b.b_content content, b.b_regdate regdate,
+ 				 b.b_viewcnt viewcnt, b.b_category category,
+ 				 u.u_id writeName, c.C_NAME companyName
+ 				  FROM testboard b , testuser u, testcompany c
+ 				   WHERE b.u_uid = u.u_uid AND b.C_UID  = c.C_UID  AND b.b_uid = #{param1}
     		</select>
     		
-    		<select id="countAllByCategory" resultType="int" >
+    		<select id="countAllByCategory" resultType="int">
     		SELECT count(*) FROM testboard WHERE b_category = #{param1}
     		</select>
     		
@@ -57,9 +59,18 @@
     		SELECT count(*) FROM testboard b , testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID  = c.C_UID  AND ( UPPER( b.b_subject) LIKE  upper('%'||#{param1}||'%')  OR  upper (c.C_NAME) LIKE upper('%'||#{param1}||'%') )
     		</select>
     		
+    		<select id="countAllBySearch2" resultType="int">
+    		SELECT count(*) FROM testboard b , testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID  = c.C_UID  AND ( UPPER( b.b_subject) LIKE  upper('%'||#{param1}||'%') )
+    		</select>
+    		
+    		<select id="countAllBySearch3" resultType="int">
+    		SELECT count(*) FROM testboard b , testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID  = c.C_UID  AND ( upper (c.C_NAME) LIKE upper('%'||#{param1}||'%') )
+    		</select>
+    		
     		<select id="selectByCategory" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
     	     <![CDATA[
-    		SELECT * FROM ( SELECT rownum AS rnum , b.*  FROM (SELECT b.b_uid "uid", b.b_subject subject, b.b_content content, b.b_regdate regdate, b.b_viewcnt viewcnt, b.b_category category, u.u_id writeName, c.C_NAME companyName FROM testboard b, testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID = c.c_uid AND  ORDER BY b_uid DESC ) b  
+    		SELECT * FROM
+    		 ( SELECT rownum AS rnum , b.*  FROM (SELECT b.b_uid "uid", b.b_subject subject, b.b_content content, b.b_regdate regdate, b.b_viewcnt viewcnt, b.b_category category, u.u_id writeName, c.C_NAME companyName FROM testboard b, testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID = c.c_uid AND b.b_category = #{param1}  ORDER BY b_uid DESC ) b  
 					) 
 					WHERE rnum >= #{param2} AND rnum < (#{param2} + #{param3})
     		]]> 
@@ -73,6 +84,27 @@
 					WHERE rnum >= #{param2} AND rnum < (#{param2} + #{param3})
 			]]> 
     		</select>
+    		 
+    		<select id="selectBySearch2" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
+    		 <![CDATA[
+    		SELECT * FROM ( SELECT rownum AS rnum , b.*  FROM (SELECT b.b_uid "uid", b.b_subject subject, b.b_content content, b.b_regdate regdate, b.b_viewcnt viewcnt, b.b_category category, u.u_id writeName, c.C_NAME companyName FROM testboard b, testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID = c.c_uid AND ( UPPER( b.b_subject) LIKE  upper('%'||#{param1}||'%'))  ORDER BY b_uid DESC ) b  
+					) 
+					WHERE rnum >= #{param2} AND rnum < (#{param2} + #{param3})
+			]]> 
+    		
+    		</select>
+    		
+    		<select id="selectBySearch3" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
+    		 <![CDATA[
+    		SELECT * FROM ( SELECT rownum AS rnum , b.*  FROM (SELECT b.b_uid "uid", b.b_subject subject, b.b_content content, b.b_regdate regdate, b.b_viewcnt viewcnt, b.b_category category, u.u_id writeName, c.C_NAME companyName FROM testboard b, testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID = c.c_uid AND ( upper (c.C_NAME) LIKE upper('%'||#{param1}||'%') )  ORDER BY b_uid DESC ) b  
+					) 
+					WHERE rnum >= #{param2} AND rnum < (#{param2} + #{param3})
+			]]> 
+    		
+    		</select>
+    		
+    		
+    		
     		
     		<select id="selectNotice" resultType="com.lec.sts15_mybatis.board.beans.BWriteDTO">
     			SELECT b.b_uid "uid", b.b_subject subject, b.b_content content, b.b_regdate regdate, b.b_viewcnt viewcnt, b.b_category category, u.u_id writeName, c.C_NAME companyName FROM testboard b, testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID = c.c_uid AND b.b_category = '공지사항' ORDER BY b_uid DESC
@@ -80,7 +112,7 @@
     		
     		
     		<update id="incViewCnt" flushCache="true">
-    		UPDATE test_write SET wr_viewcnt = wr_viewcnt + 1 WHERE wr_uid = #{param1}
+    		UPDATE testboard SET b_viewcnt = b_viewcnt + 1 WHERE b_uid = #{param1}
     		
     		</update>
     		
@@ -92,12 +124,12 @@
     		-->
     		
     		<update id="update" flushCache="true">
-    	   UPDATE test_write SET wr_subject = #{a.subject}, wr_content = #{a.content} WHERE wr_uid = #{param1}
+    	   UPDATE testboard SET b_subject = #{a.subject}, b_content = #{a.content}, b_category = #{a.category}, c_uid = #{a.c_uid} WHERE b_uid = #{param1}
     
     		</update>
     		
     		<delete id="deleteByUid">
-    		DELETE FROM test_write WHERE wr_uid = #{param1}
+    		DELETE FROM testboard WHERE b_uid = #{param1}
     		</delete>
     		
     		<!--  

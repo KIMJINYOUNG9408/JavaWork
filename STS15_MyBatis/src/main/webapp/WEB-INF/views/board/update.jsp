@@ -26,40 +26,51 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>수정 ${list[0].subject}</title>
 </head>
-<script>
-function chkSubmit(){
-	frm = document.forms['frm'];
-	var subject = frm['subject'].value.trim();
-	
-	if(subject == ""){
-		alert("제목은 반드시 작성해야 합니다");
-		frm['subject'].focus();
-		return false;
-	}
-	return true;
-}
-</script>
+
 <body>
 <h2>수정</h2>
+
 <form name="frm" action="updateOk.do" method="post" onsubmit="return chkSubmit()">
 <input type="hidden" name="uid" value="${list[0].uid}"/>
-작성자 : ${list[0].name}<br> <%-- 작성자 이름 변경 불가 --%>
-제목 : 
+
+카테고리:
+<select name="category">
+<c:if test="${list[0].category eq '공지사항'}">
+	<option>공지사항</option>
+</c:if>
+	<option>기업후기</option>
+	<option>면접후기</option>
+	<option>정보공유</option>
+</select>
+제목:
 <input type="text" name="subject" value="${list[0].subject}"/><br>
-내용: <br>
-<textarea name="content">${list[0].content}</textarea>
-<br>
+내용:<br>
+<textarea name="content" value="${list[0].content}"></textarea><br>
+유저:  ${list[0].writeName } <br>
+
+회사:
+
+<br><br>
+ <select name="c_uid">
+ <c:forEach var="a" items="${comlist}" varStatus="status">
+				<option value = "${a.c_uid }">${a.companyName }</option> 
+			</c:forEach>
+	
+
+</select>
+<br><br>
 <input type="submit" value="수정"/>
 </form>
+<br>
 <button onclick="history.back()">이전으로</button>
-<button onclick="location.href='list.do'">목록보기</button>
+<button type="button" onclick="location.href='list.do'">목록으로</button>
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 </body>
 </html>
 </c:otherwise>
 </c:choose>
-
 
 
 

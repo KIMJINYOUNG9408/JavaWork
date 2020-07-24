@@ -171,7 +171,7 @@
 	
 	
 		
-		<Context docBase="STS13_JDBC" path="/sts13_jdbc" reloadable="true" source="org.eclipse.jst.jee.server:STS13_JDBC"/><Context docBase="STS15_MyBatis" path="/sts15_mybatis" reloadable="true" source="org.eclipse.jst.jee.server:STS15_MyBatis"/><Context docBase="JSP20_FileUpload" path="/JSP20_FileUpload" reloadable="true" source="org.eclipse.jst.jee.server:JSP20_FileUpload"/></Host>
+		<Context docBase="STS13_JDBC" path="/sts13_jdbc" reloadable="true" source="org.eclipse.jst.jee.server:STS13_JDBC"/><Context docBase="STS15_MyBatis" path="/sts15_mybatis" reloadable="true" source="org.eclipse.jst.jee.server:STS15_MyBatis"/><Context docBase="JSP20_FileUpload" path="/JSP20_FileUpload" reloadable="true" source="org.eclipse.jst.jee.server:JSP20_FileUpload"/><Context docBase="STS19_REST" path="/sts19_rest" reloadable="true" source="org.eclipse.jst.jee.server:STS19_REST"/></Host>
     </Engine>
   </Service>
 </Server><!-- 

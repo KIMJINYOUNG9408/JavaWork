@@ -103,17 +103,24 @@ public class BListCommand implements BCommand {
 			IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
 			
 			if(col.equals("none")) {
-				System.out.println("파람1"+param1);
-				cnt = dao.countAllBySearch(word);
 				
-				System.out.println("과연" +cnt);
-				
+				cnt = dao.countAllBySearch(word);				
 				int totalPage = (int)Math.ceil(cnt / (double)10);
 				model.addAttribute("list",dao.selectBySearch(word, fromRow, 10));
 				model.addAttribute("cnt",totalPage);
-			} else if(col.equals("company")) {
-				
 			} else if(col.equals("subject")) {
+				
+				cnt = dao.countAllBySearch2(word);				
+				int totalPage = (int)Math.ceil(cnt / (double)10);
+				model.addAttribute("list",dao.selectBySearch2(word, fromRow, 10));
+				model.addAttribute("cnt",totalPage);
+				
+			
+			} else if(col.equals("company")) {
+				cnt = dao.countAllBySearch3(word);				
+				int totalPage = (int)Math.ceil(cnt / (double)10);
+				model.addAttribute("list",dao.selectBySearch3(word, fromRow, 10));
+				model.addAttribute("cnt",totalPage);
 				
 			}
 		} 

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lec.sts15_mybatis.board.beans.IAjaxDAO">
+
+	<select id="select" resultType="com.lec.sts15_mybatis.board.beans.ReplyWriteDTO">
+	  SELECT  rep_uid "ruid", REP_CONTENT "rcontent", REP_REGDATE "rregdate",  b_uid "rb_uid",u_uid "ru_uid"
+		FROM TESTREPLY
+		WHERE b_uid = #{param1}
+		ORDER BY rep_regdate
+	
+	</select>
+	
+	<insert id="insertReply" flushCache="true">
+		INSERT INTO testreply
+			(rep_uid, rep_content, rep_regdate, b_uid, u_uid)
+		VALUES
+			(reply_seq.nextval, 
+			#{param1},sysdate, #{param2}, #{param3})
+	</insert>
+	
+	<delete id="deleteByUid" flushCache="true">
+		DELETE FROM testreply
+		WHERE rep_uid = #{param1}
+	
+	</delete>
+	
+
+
+</mapper>

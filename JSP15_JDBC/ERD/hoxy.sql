@@ -442,10 +442,10 @@ SELECT * FROM ( SELECT rownum AS rnum , b.*  FROM (SELECT b.b_uid "uid", b.b_sub
  
 				SELECT * FROM TESTBOARD ;
    	  
- INSERT INTO testboard
-    	 (B_UID ,B_SUBJECT ,B_CONTENT ,B_CATEGORY ,U_UID ,C_UID ) 
+ INSERT INTO board
+    	 (B_UID ,B_SUBJECT ,B_CONTENT ,B_CATEGORY ,U_UID ) 
     	 VALUES 
-    	   (board_seq.nextval, 'NEXT 공지사항입니다', '공지사항입니다', '공지사항' ,1);  	  
+    	   (SEQ_board_b_uid.nextval, 'NEXT 공지사항입니다', '공지사항입니다', '공지사항' ,1);  	  
     	  
 SELECT * FROM ( SELECT rownum AS rnum , b.*  FROM (SELECT b.b_uid, b.b_subject, b.b_content, b.b_regdate, b.b_viewcnt, b.b_category, u.U_ID, c.C_NAME FROM testboard b, testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID = c.c_uid AND b.B_CATEGORY = 'ㅇ' ORDER BY b_uid DESC) b  
 					) 
@@ -456,3 +456,31 @@ SELECT b.b_uid "uid", b.b_subject subject, b.b_content content, b.b_regdate regd
 SELECT count(*) FROM testboard b , testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID  = c.C_UID  AND ( UPPER( b.b_subject) LIKE  upper('%공지%')  OR  upper (c.C_NAME) LIKE upper('%kakaod%') )
 
 SELECT * FROM TESTCOMPANY WHERE upper(c_name) LIKE '%kakao%'; 
+
+SELECT  b.b_uid "uid", b.b_subject subject, b.b_content content, b.b_regdate regdate, b.b_viewcnt viewcnt, b.b_category category, u.u_id writeName, c.C_NAME companyName FROM testboard b , testuser u, testcompany c WHERE b.u_uid = u.u_uid          AND b.C_UID  = c.C_UID  AND b.b_uid = 26;
+
+SELECT * FROM TESTREPLY ;
+
+
+SELECT * FROM testboard;
+SELECT * FROM testreply;
+SELECT * FROM testuser;
+INSERT INTO testreply VALUES (reply_seq.nextval, '댓글5', SYSDATE, 26,1);
+
+SELECT  REP_CONTENT content, REP_REGDATE regdate, u_uid
+FROM TESTREPLY
+WHERE b_uid = 26
+ORDER BY regdate;
+
+	  SELECT  REP_CONTENT content, REP_REGDATE regdate, u_uid
+		FROM TESTREPLY
+		WHERE b_uid = 26
+		ORDER BY regdate;
+	
+	INSERT INTO testreply
+			(rep_uid, rep_content, rep_regdate, b_uid, u_uid)
+		VALUES
+			(reply_seq.nextval,"아이쿠야",sysdate, 26, 1)
+			
+		
+SELECT * FROM TESTREPLY ;
