@@ -15,6 +15,7 @@ import com.lec.sts15_mybatis.board.beans.AjaxWriteResult;
 import com.lec.sts15_mybatis.board.beans.ReplyWriteDTO;
 import com.lec.sts15_mybatis.board.reply.command.DeleteCommand;
 import com.lec.sts15_mybatis.board.reply.command.ListCommand;
+import com.lec.sts15_mybatis.board.reply.command.UpdateCommand;
 import com.lec.sts15_mybatis.board.reply.command.WriteCommand;
 
 @RestController
@@ -37,6 +38,12 @@ public class AjaxController {
 	@RequestMapping(value= "/board/deleteOk.ajax", method=RequestMethod.POST)
 	public AjaxWriteResult deleteOk(HttpServletRequest request, HttpServletResponse response) {
 		new DeleteCommand().execute(request, response);
+		return buildResult(request);
+	}
+	
+	@RequestMapping(value= "/board/updateOk.ajax", method=RequestMethod.POST)
+	public AjaxWriteResult updateOk(HttpServletRequest request, HttpServletResponse response) {
+		new UpdateCommand().execute(request,response);
 		return buildResult(request);
 	}
 	

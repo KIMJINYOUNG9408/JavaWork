@@ -138,6 +138,10 @@
     		</select>
     		-->
     		
+    		<select id="replyCnt" resultType="int">
+    			SELECT count(*) FROM testreply WHERE b_uid = #{param1}
+    			
+    		</select>
     	
     </mapper>
 

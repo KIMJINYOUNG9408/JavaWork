@@ -74,11 +74,16 @@ ${page }
 			
 			<c:choose>
 			<c:when test="${page == '1' }">	
-			<c:forEach var="noti" items="${notice}">
+			<c:forEach var="noti" items="${notice}" varStatus="status">
 				<tr class="gong">
 				<td>${noti.uid }</td>
 				<td>-</td>
-				<td><a class="gong" href="view.do?uid=${noti.uid }">${noti.subject }</a></td>
+				<td><a class="gong" href="view.do?uid=${noti.uid }">${noti.subject }</a>
+				<c:if test="${noticeRepCnt[status.index] != 0}">
+				<b>[${noticeRepCnt[status.index]}]</b>
+				</c:if>
+				
+				</td>
 				
 				<td>ADMIN</td>			
 				<td>${noti.viewCnt }</td>
@@ -102,11 +107,16 @@ ${page }
 			</c:when>
 			<c:otherwise>
 			
-			<c:forEach var="dto" items="${list}">
+			<c:forEach var="dto" items="${list}" varStatus="status">
 				<tr>
 				<td>${dto.uid }</td>
 				<td>${dto.companyName }</td>
-				<td><a href="view.do?uid=${dto.uid }">${dto.subject }</a></td>
+				<td><a href="view.do?uid=${dto.uid }">${dto.subject }</a>
+				<c:if test="${recnt[status.index] != 0}">
+				<b>[${recnt[status.index]}]</b>
+				</c:if>
+				
+				</td>
 				
 				<td>${dto.writeName }</td>			
 				<td>${dto.viewCnt }</td>
@@ -161,6 +171,8 @@ ${page }
 				</div>
 		<br>
 		<button onclick="location.href='write.do'">신규등록</button>
+		
+		
 
 
 </body>

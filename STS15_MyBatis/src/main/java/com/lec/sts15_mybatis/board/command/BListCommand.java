@@ -22,6 +22,7 @@ public class BListCommand implements BCommand {
 		
 		int categoryNum;
 		int cnt = 0;
+		
 
 //		BWriteDAO dao = new BWriteDAO();
 //		List<BWriteDTO> list = dao.select();
@@ -81,19 +82,34 @@ public class BListCommand implements BCommand {
 		if (categoryName.equals("전체") || categoryName.equals("")) {
 			
 			IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
+			
+			List<BWriteDTO> a = dao.selectByPages(fromRow, 10);
 			cnt = dao.countAll();
 			int totalPage = (int)Math.ceil(cnt / (double)10);
 			System.out.println(cnt);
 			model.addAttribute("list",  dao.selectByPages(fromRow, 10));
 			model.addAttribute("cnt",totalPage);
+			int []replyCnt = new int[a.size()];
+			for(int i = 0; i <a.size(); i++) {
+				int b = a.get(i).getUid();
+					replyCnt[i] = dao.replyCnt(b);
+				}
+			model.addAttribute("recnt",replyCnt);
+			
 			}
 		 else {
 			IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
 			cnt = dao.countAllByCategory(categoryName);
 			int totalPage = (int)Math.ceil(cnt / (double)10);
-			
+			List<BWriteDTO> a = dao.selectByCategory(categoryName, fromRow,10);
 			model.addAttribute("list", dao.selectByCategory(categoryName, fromRow, 10));
 			model.addAttribute("cnt",totalPage);
+			int []replyCnt = new int[a.size()];
+			for(int i = 0; i <a.size(); i++) {
+				int b = a.get(i).getUid();
+					replyCnt[i] = dao.replyCnt(b);
+				}
+			model.addAttribute("recnt",replyCnt);
 		}  
 		
 		
@@ -106,21 +122,45 @@ public class BListCommand implements BCommand {
 				
 				cnt = dao.countAllBySearch(word);				
 				int totalPage = (int)Math.ceil(cnt / (double)10);
+				List<BWriteDTO> a = dao.selectBySearch(word, fromRow,10);
 				model.addAttribute("list",dao.selectBySearch(word, fromRow, 10));
 				model.addAttribute("cnt",totalPage);
+				int []replyCnt = new int[a.size()];
+				for(int i = 0; i <a.size(); i++) {
+					int b = a.get(i).getUid();
+						replyCnt[i] = dao.replyCnt(b);
+					}
+				model.addAttribute("recnt",replyCnt);
 			} else if(col.equals("subject")) {
 				
 				cnt = dao.countAllBySearch2(word);				
 				int totalPage = (int)Math.ceil(cnt / (double)10);
+				List<BWriteDTO> a = dao.selectBySearch2(word, fromRow,10);
+
 				model.addAttribute("list",dao.selectBySearch2(word, fromRow, 10));
 				model.addAttribute("cnt",totalPage);
+				int []replyCnt = new int[a.size()];
+				for(int i = 0; i <a.size(); i++) {
+					int b = a.get(i).getUid();
+						replyCnt[i] = dao.replyCnt(b);
+					}
+				model.addAttribute("recnt",replyCnt);
 				
 			
 			} else if(col.equals("company")) {
 				cnt = dao.countAllBySearch3(word);				
 				int totalPage = (int)Math.ceil(cnt / (double)10);
+				List<BWriteDTO> a = dao.selectBySearch3(word, fromRow,10);
+
 				model.addAttribute("list",dao.selectBySearch3(word, fromRow, 10));
 				model.addAttribute("cnt",totalPage);
+				int []replyCnt = new int[a.size()];
+				for(int i = 0; i <a.size(); i++) {
+					int b = a.get(i).getUid();
+						replyCnt[i] = dao.replyCnt(b);
+					}
+				model.addAttribute("recnt",replyCnt);
+				
 				
 			}
 		} 
@@ -128,6 +168,13 @@ public class BListCommand implements BCommand {
 			
 			IWriteDAO dao = C.sqlSession.getMapper(IWriteDAO.class);
 		 	model.addAttribute("notice", dao.selectNotice());
+		 	List<BWriteDTO> noticeReplyCnt = dao.selectNotice();
+		 	int []noticeReply = new int[noticeReplyCnt.size()];
+			for(int i = 0; i <noticeReplyCnt.size(); i++) {
+				int b = noticeReplyCnt.get(i).getUid();
+					noticeReply[i] = dao.replyCnt(b);
+				}
+			model.addAttribute("noticeRepCnt",noticeReply);
 
 	}
 

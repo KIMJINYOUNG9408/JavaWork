@@ -484,3 +484,7 @@ ORDER BY regdate;
 			
 		
 SELECT * FROM TESTREPLY ;
+SELECT * FROM TESTREPLY ;
+SELECT count(*) FROM testreply WHERE b_uid = 96;
+
+SELECT count(*) FROM testboard b , testuser u, testcompany c WHERE b.u_uid = u.u_uid AND b.C_UID  = c.C_UID  AND ( UPPER( b.b_subject) LIKE  upper('%공지%')  OR  upper (c.C_NAME) LIKE upper('%kakaod%') )

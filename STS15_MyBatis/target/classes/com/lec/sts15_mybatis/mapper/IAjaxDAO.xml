@@ -24,6 +24,16 @@
 	
 	</delete>
 	
+	<update id="update" flushCache="true">
+		UPDATE testreply
+		SET 
+			rep_content = #{content}
+		WHERE 
+			rep_uid = #{uid}
+	
+	</update>
+	
+	
 
 
 </mapper>

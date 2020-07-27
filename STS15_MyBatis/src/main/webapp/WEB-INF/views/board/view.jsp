@@ -6,6 +6,14 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <script src="${pageContext.request.contextPath }/JS/board.js"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+
+
 
 <c:choose>
 	<c:when test="${empty list || fn:length(list) == 0 }">	
@@ -36,6 +44,7 @@ function chkDelete(uid){
 <body>
 <h2>읽기${list[0].subject}</h2>
 <br>
+<div id="replycnt"></div>
 회사명 : ${list[0].companyName}<br>
 <div id="a">${list[0].uid}</div><br>
 작성자 : ${list[0].writeName}<br>
@@ -44,6 +53,15 @@ function chkDelete(uid){
 등록일 : ${list[0].regDate}<br>
 조회수 : ${list[0].viewCnt}<br>
 내용:  ${list[0].content}<br>
+<div class="row">
+	<div class="col-xs-5">
+		<input type="text" id="copy_text_input" value="" class="form-control">
+	</div>
+	<div class="col-xs-2">
+		<button type="button" id="copy_btn" class="btn btn-info">ㄴ클립보드 복사ㄱ</button>
+	</div>
+</div>
+
 
 <hr>
 <div>
@@ -67,6 +85,7 @@ ${list[0].content}
 
 
 
+
 <h3>댓글목록</h3>
 <div id="list">
 <form id="frmList" name="frmList">
@@ -85,12 +104,17 @@ ${list[0].content}
 			</tbody>
 		</table>
 	</form>
+
 	</div>
+	
+
 </body>
 </html>
 
 	</c:otherwise>
 </c:choose>
+
+
 
 
 

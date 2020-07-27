@@ -31,5 +31,6 @@ public interface IWriteDAO {
 	public int incViewCnt(int uid); // 조회수 증가
 	
 	public BWriteDTO searchBySubject(String subject);
+	public int replyCnt(int uid);
 	
 }
