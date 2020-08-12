@@ -8,8 +8,8 @@
     	
     	<insert id="insert" flushCache="true" parameterType="com.lec.sts15_mybatis.board.beans.BWriteDTO"
     	keyProperty="uid" useGeneratedKeys="true" keyColumn="B_UID">
-    INSERT INTO testboard 
-    	 (B_UID ,B_SUBJECT ,B_CONTENT ,B_CATEGORY ,U_UID ,C_UID ) 
+    INSERT INTO testboard  
+    	 (B_UID ,B_SUBJECT ,B_CONTENT ,B_CATEGORY ,U_UID ,C_UID) 
     	 VALUES 
     	   (board_seq.nextval, #{subject}, #{content}, #{category} ,#{u_uid}, #{c_uid})
     	</insert>
