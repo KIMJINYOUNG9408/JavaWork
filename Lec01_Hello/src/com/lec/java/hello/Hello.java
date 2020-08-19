@@ -25,6 +25,7 @@ public class Hello {
 		System.out.print("프레임워크");
 		System.out.println("풀스택 과정");
 		System.out.println("2020-03-16");
+		System.out.println("2020-08-19");
 
 	}
 
