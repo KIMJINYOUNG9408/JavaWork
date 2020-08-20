@@ -47,7 +47,8 @@ public class Collection09Main {
 			System.out.println(itr2.next());
 		}
 
-		// enhanced for
+		
+		// enhanced for 
 		System.out.println();
 		System.out.println("enhanced for");
 		for (Integer e : tset) {
