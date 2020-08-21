@@ -1,5 +1,9 @@
 package com.lec.java.hello;
 
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
 /*
  * Java 첫 프로그램.
  * [학습목표]
@@ -30,3 +34,4 @@ public class Hello {
 	}
 
 }
+
