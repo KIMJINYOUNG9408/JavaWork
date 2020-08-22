@@ -10,7 +10,7 @@ import java.util.TreeSet;
        |__ HashSet<E>, TreeSet<E>
 
  TreeSet: 데이터가 정렬된 상태로 저장(오름차순, 내림차순)
- 
+ TreeSet : 
  	(※ TreeXXX ← 주로 '정렬'에 특화된 자료구조 입니다)
 */
 public class Collection09Main {
