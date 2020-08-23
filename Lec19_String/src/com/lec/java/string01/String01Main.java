@@ -94,6 +94,9 @@ public class String01Main {
 			System.out.println(x);
 		}
 		
+	    String bb = "12:00 10";
+	    	System.out.println(bb.split("\\s")[0]);
+	    	System.out.println(bb.split("\\s+")[1]);
 		// 년, 월,일,시,분,초 분리하기
 		str4 = "2018-08-16 14:34:52";
 		String date = str4.split("\\s")[0];
@@ -102,15 +105,25 @@ public class String01Main {
 		System.out.println("time = " + time);
 		String year = date.split("-")[0];
 		System.out.println("year = " + year);    
-		
-		
+		String a = "22:30";
+		System.out.println("답::::::");
+		String b = a.split(":")[0];
+		String c = a.split(":")[1];
+		System.out.println(b);
+		System.out.println(c);
 		
 		// String.join()
 		// 문자열들, 문자열 배열 --> 하나의 문자열로 합하기 split() 과 반대
 		System.out.println();
 		System.out.println("String.join(delimeter, elements ...)");
 		String[] str7 = { "Alice", "Bob", "Carol" };
+		char a1 = str7[0].charAt(1);
+		if(a1 == 'l') {
+			System.out.println("야야야야양ㅇ");
+		}
 		
+			System.out.println("맞아");
+		System.out.println(a1 + "!!!!!!!!!!!!!!!!!!!");
 		System.out.println(String.join(" - ", str7));
 
 		System.out.println();
@@ -125,7 +138,7 @@ public class String01Main {
 		String str9 = "   김동후   ";
 		System.out.println("[" +str9 + "]");
 		System.out.println("[" +str9.trim() + "]");
-
+     
 		System.out.println();
 		System.out.println("replace(target, replacement)"); // 문자열 치환 target → replacement
 		String str10 = "Hello Language My Language";

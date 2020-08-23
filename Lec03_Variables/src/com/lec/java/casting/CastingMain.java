@@ -9,7 +9,7 @@ package com.lec.java.casting;
  *                    char
  * 
  * 명시적 형변환(Explicit casting): 프로그래머가 직접 타입을 변환하는 것
- *      
+ *      	
  *      (변환하고자 하는 타입명)변수/값
  *      
  *      

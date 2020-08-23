@@ -15,6 +15,7 @@ package com.lec.java.array02;
 		배열이름.length 
  */
 public class Array02Main {
+	
 
 	public static void main(String[] args) {
 		System.out.println("배열의 선언과 초기화");
