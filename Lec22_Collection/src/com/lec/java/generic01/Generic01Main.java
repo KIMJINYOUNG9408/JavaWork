@@ -117,8 +117,8 @@ class AppleBox{
 //지정하지 않고 generic(일반적으로)하게 정의하는 클래스
 //< > 안에 타입매개변수 (type parameter) 지정
 class FruitBox<T>{
-	T fruit;   // T 타입 변수
-	
+	T fruit;   // T 타입 변수 
+      
 	public FruitBox() {}
 	public FruitBox(T fruit) { this.fruit = fruit; }   // T 타입 매개변수
 	
